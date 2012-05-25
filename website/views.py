@@ -179,6 +179,9 @@ def cursos_registro(solicitud):
         if solicitud.POST.get('descuento'):
             registro.descuento = float(solicitud.POST.get('descuento'))
 
+        if solicitud.POST.get('tipo'):
+            registro.tipo = solicitud.POST.get('tipo')
+
         registro.save()
 
         return HttpResponse('OK')

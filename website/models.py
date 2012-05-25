@@ -1,6 +1,8 @@
 from django.db import models
 from django.forms import ModelForm
 from django.conf import settings
+from django.db.models.signals import post_save
+from django.core.mail import send_mail
 import image
 
 
@@ -99,7 +101,17 @@ class RegistroCurso(models.Model):
     personas  = models.IntegerField(default=1)
     total     = models.FloatField()
     descuento = models.FloatField()
-
+    tipo      = models.CharField(max_length=100, default="paypal")
 
     def __unicode__(self):
         return '%s en %s' % (self.nombre, self.curso)
+
+
+# hooks
+def registro_post_save(sender, instance, created, *args, **kwargs):
+    if created:
+        pass
+    else: 
+        send_mail('Nuevo registro al %s' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), 'registro@mejorando.la', ['dual.3nigma@gmail.com'])
+
+post_save.connect(registro_post_save, sender=RegistroCurso)

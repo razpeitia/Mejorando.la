@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.forms import ModelForm
 from django.conf import settings
@@ -110,8 +112,10 @@ class RegistroCurso(models.Model):
 # hooks
 def registro_post_save(sender, instance, created, *args, **kwargs):
     if created:
-        pass
-    else: 
-        send_mail('Nuevo registro al %s' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), 'registro@mejorando.la', ['dual.3nigma@gmail.com'])
+        send_mail('Registro al "%s"' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), 'registro@mejorando.la', ['dual.3nigma@gmail.com'])
+    
+    if instance.pago:
+        send_mail('Pago realizado de "%s"' % instance.curso, '%s (%s) ha realizado el pago de %s por %s persona(s) mediante paypal al "%s"' % (instance.nombre, instance.email, instance.total, instance.personas, instance.curso), 'registro@mejorando.la', ['dual.3nigma@gmail.com'])
+        
 
 post_save.connect(registro_post_save, sender=RegistroCurso)

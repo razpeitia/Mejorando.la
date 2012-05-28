@@ -18,7 +18,7 @@
 	    <section id="anteriores">
 	      {% for video in mes.videos %}
 	      <article class="capitulo">
-	        <p class="desc">{{ video.descripcion|striptags|truncatechars:120 }}</p>
+	        <p class="desc">{{ video.descripcion|striptags|safe|truncatechars:120 }}</p>
 	        <div class="cintaver">
 	        </div><a href="{{ video.get_absolute_url }}" title="{{ video.titulo }}">
 	          

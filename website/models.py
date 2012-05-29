@@ -113,10 +113,10 @@ class RegistroCurso(models.Model):
 # hooks
 def registro_post_save(sender, instance, created, *args, **kwargs):
     if created:
-        send_mail('Registro al "%s"' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), 'registros@mejorando.la', ['ventas@mejorando.la', 'cursos@mejorando.la', 'dual.3nigma@gmail.com', 'cvander@gmail.com'])
+        send_mail('Registro al "%s"' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), 'server.mejorando.la', ['ventas@mejorando.la', 'cursos@mejorando.la', 'dual.3nigma@gmail.com', 'cvander@gmail.com'])
     
     if instance.pago:
-        send_mail('Pago de "%s"' % instance.curso, '%s (%s) ha realizado el pago de %s por %s persona(s) mediante paypal al "%s"' % (instance.nombre, instance.email, instance.total, instance.personas, instance.curso), 'registros@mejorando.la', ['ventas@mejorando.la', 'cursos@mejorando.la', 'dual.3nigma@gmail.com', 'cvander@gmail.com'])
+        send_mail('Pago de "%s"' % instance.curso, '%s (%s) ha realizado el pago de %s por %s persona(s) mediante paypal al "%s"' % (instance.nombre, instance.email, instance.total, instance.personas, instance.curso), 'server.mejorando.la', ['ventas@mejorando.la', 'cursos@mejorando.la', 'dual.3nigma@gmail.com', 'cvander@gmail.com'])
         
 
 post_save.connect(registro_post_save, sender=RegistroCurso)

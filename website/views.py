@@ -66,8 +66,8 @@ def cursos(solicitud):
 	return render_to_response('website/cursos.html', {
 		'meses': [{
 			'fecha' : fecha,
-			'cursos': Curso.objects.filter(fecha__year=fecha.year, fecha__month=fecha.month, activado=True).order_by('fecha')
-		} for fecha in Curso.objects.filter(activado=True).dates('fecha', 'month', order='ASC')]
+			'cursos': Curso.objects.filter(fecha__year=fecha.year, fecha__month=fecha.month, activado=True).order_by('-fecha')
+		} for fecha in Curso.objects.filter(activado=True).dates('fecha', 'month', order='DESC')]
 	})
 
 # el archivo muestra todos los videos

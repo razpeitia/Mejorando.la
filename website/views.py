@@ -40,7 +40,7 @@ def home(solicitud):
         'videos': ultimos_4_videos,  # ultimos 4 videos
         'pais': get_pais(solicitud.META),  # el horario del programa localizado
         'timestamp': get_timestamp(),  # Obtiene el timestamp del sig. program.
-        'cursos': Curso.objects.all().order_by('-fecha').filter(activado=True, fecha__gte=datetime.datetime.now())
+        'cursos': Curso.objects.all().order_by('fecha').filter(activado=True, fecha__gte=datetime.datetime.now())
     })
 
 
@@ -178,6 +178,9 @@ def cursos_registro(solicitud):
 
         if solicitud.POST.get('descuento'):
             registro.descuento = float(solicitud.POST.get('descuento'))
+
+        if solicitud.POST.get('tipo'):
+            registro.tipo = solicitud.POST.get('tipo')
 
         registro.save()
 

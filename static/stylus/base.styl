@@ -103,7 +103,6 @@ header
 		top 60px
 		width 110px
 	div
-		//background url(../images/adorno-logo.png) no-repeat 680px top
 		border-top 7px solid white
 		display block
 		margin 0 auto
@@ -270,57 +269,46 @@ strong
 				margin-top -5px
 				vertical-align middle
 
-			
 		.tec:after
 			display block
 			clear both
+
 #proximo
 	background white
 	color #3d4043
 	margin-bottom 20px
 	padding-top 25px
 	text-align center
+
 	h3
 		font-size 35px
 		font-weight normal
 		letter-spacing 15px
-		margin-top 10px
+		margin 10px 0px 10px
 		text-transform uppercase
-	span
-		display block
-		font-size 12px
-		margin-top 10px
-		text-transform uppercase
-	span:nth-child(6)
-		margin-left 2px
+
 	.cuenta
 		display inline-block
 		*display inline
-		vertical-align top 
+		margin-right 40px
+		vertical-align top
 		zoom 1
-		div
+
+		&:last-child
+			margin-right 0
+
+		.leyenda
+			font-size 12px
+			margin-top 10px
+			text-transform uppercase
+
+		.digito
+			background #3d4043 url("../images/home/punto-blanco.gif") center repeat-x
+			color white
 			font-size 50px
 			font-weight bold
-			height 64px
-			position relative
-			span 
-				background #3d4043
-				color white
-				font-size 57px
-				position relative
-				padding 0 10px
-			.linea
-				background white
-				display none
-				height 2px
-				margin-left -10px
-				margin-top 50%
-				position absolute
-				width 100%
-
-	.cuenta:nth-child(even) 
-		margin 0 80px
-
+			font-size 57px
+			padding 10px 5px
 
 #social
 	margin -50px auto 0 auto

@@ -88,14 +88,11 @@ strong{font-weight:bold}
 #cursos .pais .tec img{margin-left:60px;margin-top:-5px;vertical-align:middle}
 #cursos .pais .tec:after{display:block;clear:both}
 #proximo{background:#fff;color:#3d4043;margin-bottom:20px;padding-top:25px;text-align:center;}
-#proximo h3{font-size:35px;font-weight:normal;letter-spacing:15px;margin-top:10px;text-transform:uppercase}
-#proximo span{display:block;font-size:12px;margin-top:10px;text-transform:uppercase}
-#proximo span:nth-child(6){margin-left:2px}
-#proximo .cuenta{display:inline-block;zoom:1;*display:inline;*display:inline;vertical-align:top;zoom:1;}
-#proximo .cuenta div{font-size:50px;font-weight:bold;height:64px;position:relative;}
-#proximo .cuenta div span{background:#3d4043;color:#fff;font-size:57px;position:relative;padding:0 10px}
-#proximo .cuenta div .linea{background:#fff;display:none;height:2px;margin-left:-10px;margin-top:50%;position:absolute;width:100%}
-#proximo .cuenta:nth-child(even){margin:0 80px}
+#proximo h3{font-size:35px;font-weight:normal;letter-spacing:15px;margin:10px 0 10px;text-transform:uppercase}
+#proximo .cuenta{display:inline-block;zoom:1;*display:inline;*display:inline;margin-right:40px;vertical-align:top;zoom:1;}
+#proximo .cuenta:last-child{margin-right:0}
+#proximo .cuenta .leyenda{font-size:12px;margin-top:10px;text-transform:uppercase}
+#proximo .cuenta .digito{background:#3d4043 url("../images/home/punto-blanco.gif") center repeat-x;color:#fff;font-size:50px;font-weight:bold;font-size:57px;padding:10px 5px}
 #social{margin:-50px auto 0 auto;margin-left:310px;position:absolute;width:400px;z-index:5;}
 #social div{display:inline-block;zoom:1;*display:inline;*display:inline;margin-left:40px;vertical-align:top;zoom:1}
 #social div:nth-child(1){margin-left:0}

@@ -30,27 +30,28 @@
 
     </div>
   </aside>
-  <div id="proximo" timestamp="{{ timestamp }}">
-    <div class="cinta">
-    </div>
-    <h3 class="centro">proximo capitulo en
-    </h3>
+
+  <div id="proximo" data-timestamp="{{ timestamp }}">
+    <div class="cinta"></div>
+    <h3 class="centro">próximo capítulo en</h3> 
     <div class="cuenta">
-      <div>
-        <span id="nextday"></span>
-      </div><span>dias</span>
+      <div class="dias digito"></div>
+      <div class="leyenda">días</div>
     </div>
     <div class="cuenta">
-      <div>
-        <span id="nexthour"></span>
-      </div><span>horas</span>
+      <div class="horas digito"></div>
+      <div class="leyenda">horas</div>
     </div>
     <div class="cuenta">
-      <div>
-        <span id="nextmin"></span>
-      </div><span>minutos</span>
+      <div class="minutos digito"></div>
+      <div class="leyenda">minutos</div>
+    </div>
+    <div class="cuenta">
+      <div class="segundos digito"></div>
+      <div class="leyenda">segundos</div>
     </div>
   </div>
+
   <section id="anteriores">
     <div class="cinta">
       <div class="todos"><a href="{% url website.views.videos %}" title="ver todos">archivo completo</a>

@@ -104,10 +104,17 @@ def video(solicitud, video_slug):
                         blog_url=settings.AKISMET_URL,
                         agent=settings.AKISMET_AGENT)
             if api.verify_key():
+                # por si el usuario esta detras de un proxy
+                if 'HTTP_X_FORWARDED_FOR' in meta and meta['HTTP_X_FORWARDED_FOR']:
+                    ip = meta['HTTP_X_FORWARDED_FOR'].split(',')[0]
+                else:
+                    ip = meta['REMOTE_ADDR']
+
                 if not api.comment_check(comment=comentario.content, data={
-                        'user_ip': solicitud.META['REMOTE_ADDR'],
+                        'user_ip': ip,
                         'user_agent': solicitud.META['HTTP_USER_AGENT']
                     }):
+
                     # guardar el video
                     comentario.save()
     else:

@@ -171,23 +171,22 @@ def get_pais(meta):
 
 from django.http import HttpResponse
 
-@require_POST
 def cursos_registro(solicitud):
 
-    if solicitud.POST.get('nombre') and solicitud.POST.get('telefono') and solicitud.POST.get('email') and solicitud.POST.get('curso') and solicitud.POST.get('code') and solicitud.POST.get('total'):
-        if RegistroCurso.objects.filter(email=solicitud.POST.get('email'), code=solicitud.POST.get('code')).exists():
+    if solicitud.REQUEST.get('nombre') and solicitud.REQUEST.get('telefono') and solicitud.REQUEST.get('email') and solicitud.REQUEST.get('curso') and solicitud.REQUEST.get('code') and solicitud.REQUEST.get('total'):
+        if RegistroCurso.objects.filter(email=solicitud.REQUEST.get('email'), code=solicitud.REQUEST.get('code')).exists():
             return HttpResponse('ERROR: Ya te has registrado a este curso.')
 
-        registro = RegistroCurso(nombre=solicitud.POST.get('nombre'), telefono=solicitud.POST.get('telefono'), email=solicitud.POST.get('email'), curso=solicitud.POST.get('curso'), pais=get_pais(solicitud.META), code=solicitud.POST.get('code'), total=solicitud.POST.get('total'))
+        registro = RegistroCurso(nombre=solicitud.REQUEST.get('nombre'), telefono=solicitud.REQUEST.get('telefono'), email=solicitud.REQUEST.get('email'), curso=solicitud.REQUEST.get('curso'), pais=get_pais(solicitud.META), code=solicitud.REQUEST.get('code'), total=solicitud.REQUEST.get('total'))
 
-        if solicitud.POST.get('personas'):
-            registro.personas = int(solicitud.POST.get('personas'))
+        if solicitud.REQUEST.get('personas'):
+            registro.personas = int(solicitud.REQUEST.get('personas'))
 
-        if solicitud.POST.get('descuento'):
-            registro.descuento = float(solicitud.POST.get('descuento'))
+        if solicitud.REQUEST.get('descuento'):
+            registro.descuento = float(solicitud.REQUEST.get('descuento'))
 
-        if solicitud.POST.get('tipo'):
-            registro.tipo = solicitud.POST.get('tipo')
+        if solicitud.REQUEST.get('tipo'):
+            registro.tipo = solicitud.REQUEST.get('tipo')
 
         registro.save()
 
@@ -195,11 +194,10 @@ def cursos_registro(solicitud):
 
     return HttpResponse('ERROR')
 
-@require_POST
 def cursos_pago_success(solicitud):
 
-    if solicitud.POST.get('payer_email') and solicitud.POST.get('transaction_subject'):
-        registro = RegistroCurso.objects.get(email=solicitud.POST.get('payer_email'), curso=solicitud.POST.get('transaction_subject'))
+    if solicitud.REQUEST.get('payer_email') and solicitud.REQUEST.get('transaction_subject'):
+        registro = RegistroCurso.objects.get(email=solicitud.REQUEST.get('payer_email'), curso=solicitud.REQUEST.get('transaction_subject'))
 
         if registro:
             registro.pago = True

@@ -39,10 +39,11 @@ footer .izquierda .text{width:220px}
 footer .izquierda span{display:block;margin-right:20px;text-align:left}
 footer .izquierda span:nth-child(1){font-size:20px;letter-spacing:-1px;margin-top:20px}
 footer .izquierda span:nth-child(2){font-size:12px;font-weight:bold}
-header{height:0;position:relative;z-index:8;}
-header #maestros{margin-left:450px;position:absolute;top:60px;width:110px}
-header #cristalab{margin-left:770px;position:absolute;top:60px;width:110px}
-header div{border-top:7px solid #fff;display:block;margin:0 auto;width:1000px}
+header{background:#323e4a;margin:0 auto;max-width:1000px;position:relative;z-index:3;}
+header h1 a img{position:relative;z-index:20}
+header #maestros{left:220px;position:absolute;top:3px}
+header #cristalab{left:285px;position:absolute;top:3px}
+header .mejor{background:url("../images/logos/linea.jpg") repeat-x left top;height:42px;position:relative;text-align:left;width:320px;z-index:7}
 h3{color:#3d4043;font-size:45px;font-weight:bold;letter-spacing:-1px;text-transform:uppercase}
 img{border:none}
 strong{font-weight:bold}
@@ -115,7 +116,12 @@ strong{font-weight:bold}
 #ultimo .horario .block{display:block}
 #ultimo .horario .big{font-size:40px;letter-spacing:1px}
 .cinta{background:url("../images/home/countdown_separador.jpg");-webkit-background-size:100%;background-size:100%;border-bottom:1px solid #fff;height:32px;width:100%}
-.menu,background #323e4a,font-family Arial,margin 0auto,position absolute,top 0,width 100%,z-index 6,ul,font-size 0,padding 0,text-align right,> li:first-child a,padding 010px,li,display inline-block,font-size 14px,font-weight bold,position relative,text-align center,text-transform uppercase,vertical-align top,z-index 5,&:hover,background #1c2127,&:hover ul li .caja,display block,a,display block,height 42px,line-height 42px,color #898c93,float right,text-align center,/***********crossbrowser************/,.ie8 #ultimo .datos .titulo{max-width:none !important;padding-left:30px !important}
+.menu{background:#323e4a;font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;}
+.menu ul{font-size:0;padding:0;text-align:right}
+.menu li{display:inline-block;zoom:1;*display:inline;font-size:14px;font-weight:bold;position:relative;text-align:center;text-transform:uppercase;vertical-align:top;z-index:5;}
+.menu li:hover{background:#1c2127}
+.menu a{display:block;height:42px;line-height:42px;color:#898c93;float:right;text-align:center;padding:0 10px}
+.ie8 #ultimo .datos .titulo{max-width:none !important;padding-left:30px !important}
 .ie8 .tela{background:url("../images/home/tela.png")}
 .ie8 .block .tit{background:url("../images/home/tela.png")}
 #envivo{background:#000;height:60px;margin:0 auto;width:1000px;position:relative;overflow:hidden;display:block}
@@ -130,9 +136,6 @@ footer .izquierda{padding-left:15px;padding-right:3%;width:25%}
 footer .derecha{float:right;line-height:200%;text-align:center;width:65%}
 footer .derecha a{margin:0;display:inline-block;zoom:1;*display:inline;width:40%}
 footer .derecha span:nth-child(1){display:none}
-header #maestros{margin-left:50%}
-header #cristalab{margin-left:80%}
-header div{width:auto;max-width:1000px;min-width:800px}
 #cuerpo,hgroup,footer{max-width:1000px;min-width:800px;width:auto}
 #anteriores{height:190px}
 #cursos .pais .nombre{width:60%;font-size:25px}
@@ -143,7 +146,9 @@ header div{width:auto;max-width:1000px;min-width:800px}
 #ultimo .tela{width:100%}
 #ultimo .boton{bottom:80px;position:absolute;right:20px;width:100%}
 #ultimo .fecha{bottom:60px;position:absolute;right:20px;width:100%}
-}@media screen and (max-width:800px){footer{padding-top:10px;}
+}@media screen and (max-width:800px){header{height:87px;}
+header .mejor{width:auto}
+footer{padding-top:10px;}
 footer a{color:#fff}
 footer div{min-height:0;padding-bottom:5px}
 footer .derecha{background:#3d4043;color:#fff;text-align:center;width:100%;}
@@ -154,11 +159,6 @@ footer .izquierda .text{color:#3d4043;width:100%}
 footer .izquierda span{display:inline-block;zoom:1;*display:inline;margin-right:4px}
 footer .izquierda span:nth-child(1){font-size:15px;letter-spacing:0}
 footer .izquierda span:nth-child(2){font-size:15px;font-weight:normal}
-header{height:68px;background:#fff;}
-header #maestros,header #cristalab{display:none}
-header div{background:none;border-top:none;width:auto;max-width:800px;min-width:320px}
-header h1 a{display:block;}
-header h1 a img{width:230px}
 h3{font-size:30px;font-weight:normal;letter-spacing:2px}
 #cuerpo,hgroup,footer{max-width:800px;min-width:320px;width:auto}
 #anteriores{height:148px;}
@@ -195,8 +195,9 @@ h3{font-size:30px;font-weight:normal;letter-spacing:2px}
 #ultimo .horario{margin:60px auto 0 auto}
 #ultimo .horario strong:nth-child(1){font-weight:normal}
 #ultimo .horario .big{font-size:30px}
-.menu{top:42px;li-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 3%;width:auto;}
-.menu ul{min-width:320px;padding-top:0;text-align:center}
-.menu:nth-child(even){background:none;border-left:1px solid #fff;border-right:1px solid #fff}
-.menu a{height:44px;padding:0;line-height:44px}
+.menu{top:42px;}
+.menu ul{min-width:320px;padding-top:0;text-align:center;li-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:auto;}
+.menu ul:nth-child(even){background:none;border-left:1px solid #fff;border-right:1px solid #fff}
+.menu ul a{height:44px;line-height:44px}
+}@media screen and (max-width:480px){.menu ul li a{padding:0 5px;font-size:12px}
 }

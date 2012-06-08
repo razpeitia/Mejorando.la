@@ -112,6 +112,8 @@ class RegistroCurso(models.Model):
 
 # hooks
 def registro_post_save(sender, instance, created, *args, **kwargs):
+    if settings.DEBUG: return
+
     if created:
         send_mail('Registro al "%s"' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), settings.FROM_CURSOS_EMAIL, settings.TO_CURSOS_EMAIL)
     if instance.pago:

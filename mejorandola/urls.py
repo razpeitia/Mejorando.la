@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     # registro y pago de cursos
     url(r'^cursos/registro$', 'website.views.cursos_registro'),
     url(r'^cursos/pago/success$', 'website.views.cursos_pago_success'),
+    url(r'^cursos/registros$', 'website.views.cursos_registros'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

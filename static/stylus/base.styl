@@ -409,32 +409,40 @@ strong
 	height 32px
 	width 100%
 .menu
-	background #88bc40
-	background rgba(#88bc40,.5)
-	font-family Arial
-	margin 0 auto
-	max-width 1000px
-	position absolute
-	width 100%
-	z-index 6
-	ul 
-		font-size 0
-		padding 0
-		text-align right
-		li 
-			display inline-block
-			font-size 25px 
-			position relative
-			text-align center
-			width 23%
-			z-index 5
-			a
-				display block 
-				height 40px
-				line-height 40px
-				
-			&:nth-child(even)
-				background url("../images/home/adorno-menu.png") no-repeat left center , url("../images/home/adorno-menu.png") no-repeat right center
+  background #323e4a
+  font-family Arial
+  margin 0 auto
+  position absolute
+  top 0
+  width 100%
+  z-index 6
+  ul 
+    font-size 0
+    padding 0
+    text-align right
+    > li:first-child a
+      padding 0 10px 
+    li 
+      display inline-block
+      font-size 14px
+      font-weight bold
+      position relative
+      text-align center
+      text-transform uppercase 
+      vertical-align top
+      z-index 5
+      &:hover 
+        background #1c2127
+      &:hover ul li .caja
+        display block 
+
+      a
+        display block 
+        height 42px
+        line-height 42px
+        color #898c93
+        float right
+        text-align center
 
 
 /***********crossbrowser************/
@@ -558,11 +566,7 @@ strong
 			position  absolute
 			right 20px
 			width 100%
-	
-	.menu 
-		ul 
-			li 
-				width 20%
+
 
 @media screen and (max-width:800px)
 	footer 
@@ -792,21 +796,21 @@ strong
 			font-size 30px  
 	
 	.menu 
-		top 68px
+		top 42px
 		ul 
 			min-width 320px
 			padding-top 0
 			text-align center
-			li 
-				box-sizing border-box
-				font-size 22px
-				padding 0 3%
-				width auto
-				&:nth-child(even)
-					background none 
-					border-left 1px solid white 
-					border-right 1px solid white
-				a 
-					height 44px 
-					line-height 44px
-					
+		  li 
+		    box-sizing border-box
+		    padding 0 3%
+		    width auto
+		    &:nth-child(even)
+				background none 
+				border-left 1px solid white 
+				border-right 1px solid white
+		    a 
+				height 44px 
+				padding 0
+				line-height 44px
+		

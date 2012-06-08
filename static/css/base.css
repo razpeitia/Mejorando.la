@@ -16,7 +16,7 @@ font-style: normal;
 .hidden{display:none}
 .visuallyhidden{left:-9999px;position:absolute !important;top:-9999px}
 .invisible{visibility:hidden}
-.noselect{-o-user-select:none;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none;-khtml-user-select:none}
+.noselect{-o-user-select:none;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none;-khtml-user-select:none}
 .clearfix{zoom:1;}
 .clearfix:after{clear:both;content:"\0020";display:block;height:0;visibility:hidden}
 .clear{display:block;clear:both;zoom:1}
@@ -53,7 +53,7 @@ strong{font-weight:bold}
 #anteriores .capitulo:nth-child(5){margin-right:0}
 #anteriores .capitulo{border-right:1px solid #fff;display:inline-block;zoom:1;*display:inline;height:157px;margin:0 21px 0 0;vertical-align:top;width:230px;zoom:1;}
 #anteriores .capitulo p{background:rgba(0,0,0,0.50);display:inline}
-#anteriores .capitulo .hora{opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);-webkit-transition:.3s}
+#anteriores .capitulo .hora{opacity:0 ;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0) ;filter:alpha(opacity=0) ;-webkit-transition:.3s}
 #anteriores .capitulo h2{background:rgba(0,0,0,0.50);display:inline}
 #anteriores .capitulo .block{display:block;margin-top:5px}
 #anteriores .capitulo .cap{font-size:14px;font-weight:bold;margin-bottom:12px}
@@ -62,7 +62,7 @@ strong{font-weight:bold}
 #anteriores .capitulo .texto{line-height:20px;padding:15px 15px 0 15px;position:relative;text-align:left;text-transform:none;word-break:break-word;z-index:2}
 #anteriores .capitulo article:nth-child(1){border-left:2px solid #fff}
 #anteriores .capitulo article:nth-child(4){border-right:2px solid #fff}
-#anteriores .capitulo:hover .hora{opacity:1;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)}
+#anteriores .capitulo:hover .hora{opacity:1 ;-ms-filter:none;filter:none}
 #anteriores .tit{font-size:23px}
 #cuerpo,hgroup,footer{background:#fff;margin:0 auto;width:1000px}
 #cursos{background:#fff;padding-top:65px;text-transform:uppercase;}
@@ -114,13 +114,8 @@ strong{font-weight:bold}
 #ultimo .horario{display:block;font-size:11px;letter-spacing:3px;margin:115px 40px 0 0;text-transform:uppercase;}
 #ultimo .horario .block{display:block}
 #ultimo .horario .big{font-size:40px;letter-spacing:1px}
-.cinta{background:url("../images/home/countdown_separador.jpg");-o-background-size:100%;-moz-background-size:100%;-webkit-background-size:100%;background-size:100%;border-bottom:1px solid #fff;height:32px;width:100%}
-.menu{background:#88bc40;background:rgba(136,188,64,0.50);font-family:Arial;margin:0 auto;max-width:1000px;position:absolute;width:100%;z-index:6;}
-.menu ul{font-size:0;padding:0;text-align:right;}
-.menu ul li{display:inline-block;zoom:1;*display:inline;font-size:25px;position:relative;text-align:center;width:23%;z-index:5;}
-.menu ul li a{display:block;height:40px;line-height:40px}
-.menu ul li:nth-child(even){background:url("../images/home/adorno-menu.png") no-repeat left center,url("../images/home/adorno-menu.png") no-repeat right center}
-.ie8 #ultimo .datos .titulo{max-width:none !important;padding-left:30px !important}
+.cinta{background:url("../images/home/countdown_separador.jpg");-webkit-background-size:100%;background-size:100%;border-bottom:1px solid #fff;height:32px;width:100%}
+.menu,background #323e4a,font-family Arial,margin 0auto,position absolute,top 0,width 100%,z-index 6,ul,font-size 0,padding 0,text-align right,> li:first-child a,padding 010px,li,display inline-block,font-size 14px,font-weight bold,position relative,text-align center,text-transform uppercase,vertical-align top,z-index 5,&:hover,background #1c2127,&:hover ul li .caja,display block,a,display block,height 42px,line-height 42px,color #898c93,float right,text-align center,/***********crossbrowser************/,.ie8 #ultimo .datos .titulo{max-width:none !important;padding-left:30px !important}
 .ie8 .tela{background:url("../images/home/tela.png")}
 .ie8 .block .tit{background:url("../images/home/tela.png")}
 #envivo{background:#000;height:60px;margin:0 auto;width:1000px;position:relative;overflow:hidden;display:block}
@@ -148,7 +143,6 @@ header div{width:auto;max-width:1000px;min-width:800px}
 #ultimo .tela{width:100%}
 #ultimo .boton{bottom:80px;position:absolute;right:20px;width:100%}
 #ultimo .fecha{bottom:60px;position:absolute;right:20px;width:100%}
-.menu ul li{width:20%}
 }@media screen and (max-width:800px){footer{padding-top:10px;}
 footer a{color:#fff}
 footer div{min-height:0;padding-bottom:5px}
@@ -201,9 +195,8 @@ h3{font-size:30px;font-weight:normal;letter-spacing:2px}
 #ultimo .horario{margin:60px auto 0 auto}
 #ultimo .horario strong:nth-child(1){font-weight:normal}
 #ultimo .horario .big{font-size:30px}
-.menu{top:68px;}
-.menu ul{min-width:320px;padding-top:0;text-align:center;}
-.menu ul li{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:22px;padding:0 3%;width:auto;}
-.menu ul li:nth-child(even){background:none;border-left:1px solid #fff;border-right:1px solid #fff}
-.menu ul li a{height:44px;line-height:44px}
+.menu{top:42px;li-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 3%;width:auto;}
+.menu ul{min-width:320px;padding-top:0;text-align:center}
+.menu:nth-child(even){background:none;border-left:1px solid #fff;border-right:1px solid #fff}
+.menu a{height:44px;padding:0;line-height:44px}
 }

@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from django.core import serializers
 from akismet import Akismet
 import GeoIP
 import image
@@ -206,3 +207,7 @@ def cursos_pago_success(solicitud):
             registro.save()
 
     return redirect('/cursos')
+
+@login_required(login_url='/admin')
+def cursos_registros(solicitud):
+    return render_to_response('website/cursos_registros.html', { 'registros': serializers.serialize('json', RegistroCurso.objects.all()) })

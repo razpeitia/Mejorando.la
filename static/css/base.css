@@ -41,9 +41,10 @@ footer .izquierda span:nth-child(1){font-size:20px;letter-spacing:-1px;margin-to
 footer .izquierda span:nth-child(2){font-size:12px;font-weight:bold}
 header{background:#323e4a;margin:0 auto;max-width:1000px;position:relative;z-index:3;}
 header h1 a img{position:relative;z-index:20}
-header #maestros{left:220px;position:absolute;top:3px}
-header #cristalab{left:285px;position:absolute;top:3px}
-header .mejor{background:url("../images/logos/linea.jpg") repeat-x left top;height:42px;position:relative;text-align:left;width:320px;z-index:7}
+header #maestros{left:360px;position:absolute;top:3px}
+header #cristalab{left:420px;position:absolute;top:3px}
+header .logo-chico{display:none}
+header .mejor{background:url("../images/logos/linea.jpg") repeat-x left top;height:42px;position:relative;text-align:left;width:450px;z-index:7}
 h3{color:#3d4043;font-size:45px;font-weight:bold;letter-spacing:-1px;text-transform:uppercase}
 img{border:none}
 strong{font-weight:bold}
@@ -147,6 +148,10 @@ footer .derecha span:nth-child(1){display:none}
 #ultimo .boton{bottom:80px;position:absolute;right:20px;width:100%}
 #ultimo .fecha{bottom:60px;position:absolute;right:20px;width:100%}
 }@media screen and (max-width:800px){header{height:87px;}
+header #maestros{left:220px}
+header #cristalab{left:285px}
+header .logo-chico{display:block}
+header .logo-grande{display:none}
 header .mejor{width:auto}
 footer{padding-top:10px;}
 footer a{color:#fff}

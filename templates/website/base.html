@@ -54,18 +54,21 @@
     <div id="wrapper">
       {% block letrero %}{% endblock %}
       <header>
-        <div>
-          <h1><a href="{% url website.views.home %}" title="mejorando.la"><img src="{{ STATIC_PREFIX }}images/logos/mejorandola.png" alt="mejorando.la"></a>
-          </h1>
-          <nav class="menu">
-            <ul>
-              <li><a href="{% url website.views.cursos %}" title="cursos">Cursos</a></li>
-              <li><a href="http://mejorando.la/cursos/exalumnos/" title="ex alumnos">Ex alumnos</a></li>
-              <li><a href="{% url website.views.videos %}" title="videos">Videos</a></li>
-            </ul>
-          </nav>
-          <a id="maestros" href="http://maestrosdelweb.com" target="_blank" title="maestros del web"><img src="{{ STATIC_PREFIX }}images/logos/maestros.png" alt="maestros del web"></a><a id="cristalab" href="http://cristalab.com" target="_blank" title="cristalab"><img src="{{ STATIC_PREFIX }}images/logos/cristalab.png" alt="cristalab"></a>
-        </div>
+          <div class="mejor"> 
+              <h1><a href="{% url website.views.home %}" title="mejorando.la"><img class="logo-chico" src="{{ STATIC_PREFIX }}images/logos/mejorandola.png" alt="mejorando.la"><img class="logo-grande" src="{{ STATIC_PREFIX }}images/logos/mejorandola-grande.png" alt="mejorando.la"></a>
+              </h1>
+              <a id="maestros" href="http://maestrosdelweb.com" target="_blank" title="maestros del web"><img src="{{ STATIC_PREFIX }}images/logos/maestros.png" alt="maestros del web"></a><a id="cristalab" href="http://cristalab.com" target="_blank" title="cristalab"><img src="{{ STATIC_PREFIX }}images/logos/cristalab.png" alt="cristalab"></a>
+          </div>
+     
+            <nav class="menu">
+                <ul>
+                  <li><a href="{% url website.views.cursos %}" title="cursos">Cursos</a></li>
+                  <li><a href="http://mejorando.la/cursos/exalumnos/" title="ex alumnos">Ex alumnos</a></li>
+                  <li><a href="http://mejorando.la/conferencias" title="conferencias">conferencias</a></li>
+                  <li><a href="{% url website.views.videos %}" title="videos">Videos</a></li>
+                </ul>
+            </nav>
+          
       </header>
       
       {% block body %}{% endblock %}

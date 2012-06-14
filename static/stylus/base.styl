@@ -89,25 +89,32 @@ footer
 			font-size 12px
 			font-weight bold
 header
-	height 0
+	background #323e4a
+	margin 0 auto
+	max-width 1000px 
 	position relative
-	z-index 8
+	z-index 3
+
+	h1 a img 
+		position relative 
+		z-index 20
 	#maestros
-		margin-left 450px
+		left 360px
 		position absolute
-		top 60px
-		width 110px
+		top 3px
 	#cristalab
-		margin-left 770px
+		left 420px
 		position absolute
-		top 60px
-		width 110px
-	div
-		border-top 7px solid white
-		display block
-		margin 0 auto
-		width 1000px
-		
+		top 3px
+	.logo-chico 
+		display none
+	.mejor
+		background url("../images/logos/linea.jpg") repeat-x left top 
+		height 42px
+		position relative
+		text-align left
+		width 450px
+		z-index 7
 h3
 	color #3d4043
 	font-size 45px
@@ -409,32 +416,39 @@ strong
 	height 32px
 	width 100%
 .menu
-	background #88bc40
-	background rgba(#88bc40,.5)
+	background #323e4a
 	font-family Arial
 	margin 0 auto
-	max-width 1000px
 	position absolute
+	top 0
 	width 100%
 	z-index 6
 	ul 
 		font-size 0
 		padding 0
 		text-align right
-		li 
+
+			
+	    li 
 			display inline-block
-			font-size 25px 
+			font-size 14px
+			font-weight bold
 			position relative
 			text-align center
-			width 23%
+			text-transform uppercase 
+			vertical-align top
 			z-index 5
-			a
-				display block 
-				height 40px
-				line-height 40px
-				
-			&:nth-child(even)
-				background url("../images/home/adorno-menu.png") no-repeat left center , url("../images/home/adorno-menu.png") no-repeat right center
+			&:hover 
+				background #1c2127
+
+		a
+			display block 
+			height 42px
+			line-height 42px
+			color #898c93
+			float right
+			text-align center
+			padding 0 10px 
 
 
 /***********crossbrowser************/
@@ -502,17 +516,7 @@ strong
 		.derecha span:nth-child(1) 
 			display none
 
-	header #maestros
-		margin-left 50%
 
-	header #cristalab 
-		margin-left 80%
-
-	header div 
-		width auto
-		max-width 1000px
-		min-width 800px
-	
 	#cuerpo,
 	hgroup,
 	footer 
@@ -558,13 +562,21 @@ strong
 			position  absolute
 			right 20px
 			width 100%
-	
-	.menu 
-		ul 
-			li 
-				width 20%
+
 
 @media screen and (max-width:800px)
+	header
+		height 87px
+		#maestros
+			left 220px
+		#cristalab
+			left 285px
+		.logo-chico 
+			display block 
+		.logo-grande 
+			display none 
+		.mejor 
+			width auto
 	footer 
 		padding-top 10px
 
@@ -610,25 +622,6 @@ strong
 			span:nth-child(2)
 				font-size 15px
 				font-weight normal	
-	header 
-		height 68px
-		background white
- 
-		#maestros,
-		#cristalab 
-			display none
-	
-		div 
-			background none
-			border-top none
-			width auto
-			max-width 800px
-			min-width 320px
-
-		h1 a 
-			display block
-			img
-				width 230px
 
 	h3 
 		font-size 30px
@@ -792,21 +785,27 @@ strong
 			font-size 30px  
 	
 	.menu 
-		top 68px
+		top 42px
+
 		ul 
 			min-width 320px
 			padding-top 0
 			text-align center
 			li 
-				box-sizing border-box
-				font-size 22px
-				padding 0 3%
-				width auto
-				&:nth-child(even)
+			    box-sizing border-box
+			    //padding 0 3%
+			    width auto
+			    &:nth-child(even)
 					background none 
 					border-left 1px solid white 
 					border-right 1px solid white
-				a 
+			    a 
 					height 44px 
+					//padding 0
 					line-height 44px
-					
+@media screen and (max-width:480px)
+	.menu 
+
+		ul  li a 
+			padding 0 5px	
+			font-size 12px

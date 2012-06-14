@@ -27,6 +27,7 @@ class Video(models.Model):
     descripcion = models.TextField()
     participantes = models.TextField(blank=True)
     activado = models.BooleanField(default=False)
+    audio  = models.FileField(upload_to='videos-audio', blank=True)
 
     def __unicode__(self):
         return self.titulo

@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^cursos/registros$', 'website.views.cursos_registros'),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'locateme/?$', 'website.views.locateme'),
 )
 
 if settings.DEBUG:

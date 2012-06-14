@@ -211,3 +211,7 @@ def cursos_pago_success(solicitud):
 @login_required(login_url='/admin')
 def cursos_registros(solicitud):
     return render_to_response('website/cursos_registros.html', { 'registros': serializers.serialize('json', RegistroCurso.objects.all()) })
+
+
+def locateme(solicitud):
+    return HttpResponse(get_pais(solicitud.META))

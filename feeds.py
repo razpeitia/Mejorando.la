@@ -33,10 +33,7 @@ class VideoFeed(Feed):
 		return Video.objects.all().order_by('-fecha')[:15]
 
 	def item_enclosure_url(self, item):
-		if item.audio: return item.audio.url
-
-	def item_enclosure_length(self, item):
-		if item.audio: return item.audio.size
+		if item.audio: return item.audio
 
 	def item_enclosure_mime_type(self, item):
 		if item.audio: return 'audio/mpeg'

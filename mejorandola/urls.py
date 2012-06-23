@@ -28,7 +28,9 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'locateme/?$', 'website.views.locateme'),
+    url(r'^locateme/?$', 'website.views.locateme'),
+
+    url(r'^hola/?$', 'website.views.hola'),
 )
 
 if settings.DEBUG:

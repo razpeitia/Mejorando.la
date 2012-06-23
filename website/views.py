@@ -215,3 +215,7 @@ def cursos_registros(solicitud):
 
 def locateme(solicitud):
     return HttpResponse(get_pais(solicitud.META))
+
+
+def hola(solicitud):
+    return render_to_response('website/hola.html', {})

@@ -1,0 +1,71 @@
+{% load static %} {% get_static_prefix as STATIC_PREFIX %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Conferencias de mejorando.la</title>
+	<meta name="viewport" content="width = device-width , initial-scale=1 ,maximum-scale=1 "/>
+	<link href="{{ STATIC_PREFIX }}hola/css/header.css" rel="stylesheet"  />
+	<link href="{{ STATIC_PREFIX }}hola/css/hola.css" rel="stylesheet"  />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="{{ STATIC_PREFIX }}hola/js/jquery.form.js"></script>
+	<script src="{{ STATIC_PREFIX }}hola/js/form.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="{{ STATIC_PREFIX }}hola/js/selectivizr-min.js"></script>
+	<script src="{{ STATIC_PREFIX }}hola/js/respond.min.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="[fallback css]">
+    </noscript><![endif]-->
+    <script>
+    	$(function(){
+    		$("#email").focus(function(){	
+    			$("#nombre").css({'opacity':'1'})
+    			$("#slide").css({'position':'relative','z-index':'5'})
+    			$("#slide").animate({'margin-top':0},500)
+    		})
+    	})
+    </script>
+</head>
+<body>
+	<div id="white">
+		<section id="wrapper">
+			<header>
+	          <div class="mejor"> 
+	              <h1><a href="http://mejorando.la" title="Mejorando.la"><img class="logo-chico" src="{{ STATIC_PREFIX }}hola/images/logos/mejorandola.png" alt="Mejorando.la" width="212" height="42"><img class="logo-grande" src="{{ STATIC_PREFIX }}/images/logos/mejorandola-grande.png" width="356" height="106" alt="Mejorando.la"></a>
+	              </h1>
+	              <a id="maestros" href="http://maestrosdelweb.com" target="_blank" title="Maestros del web"><img src="{{ STATIC_PREFIX }}/images/logos/maestros.png" alt="Maestros del web"></a><a id="cristalab" href="http://cristalab.com" target="_blank" title="Cristalab"><img src="{{ STATIC_PREFIX }}/images/logos/cristalab.png" alt="Cristalab"></a>
+	          </div>
+	     
+	            <nav class="menu">
+	                <ul>
+	                  <li><a href="http://mejorando.la/cursos" title="cursos">Cursos</a></li>
+	                  <li><a href="http://mejorando.la/cursos/exalumnos" title="ex alumnos">Ex alumnos</a></li>
+	                  <li><a href="http://mejorando.la/conferencias" title="conferencias">Conferencias</a></li>
+	                  <li><a href="http://mejorando.la/videos" title="videos">Videos</a></li>
+	                </ul>
+	            </nav>
+	          
+	      </header>
+		  <section id="cuerpo">
+		  		<h2 id="titulo">¿Quieres enterarte de los próximos eventos y cursos de <strong>Mejorando.la</strong>?</h2>
+		  		<p id="texto">Hacemos cursos, eventos, conferencias y charlas de todo tipo alrededor del mundo. Muchas son gratis, muchas son online, muchas en tu ciudad. Sabemos que quieres enterarte y sólo te avisaremos de aquellas que ocurran cerca a ti. </p>
+	    		<form action="{% url website.views.hola %}" method="POST" id="formulario">
+	    			<label id="inscripcion"></label>
+	    			<label id="confirmacion"></label>
+	    			
+	    			<input id="email" type="email" name="email" placeholder="Email">
+	    			<div id="slide">
+		    			<input id="nombre" type="text" name="nombre" placeholder="Nombre">
+		    			<div class="sub-blanco">
+			    			<input id="submit" type="submit" value="registrate">
+			    		</div>
+		    		</div>
+		    		
+	    		</form>
+		  
+		  </section>
+		</section>
+	</div>
+</body>
+</html>

@@ -13,7 +13,7 @@
 		}
 		else
 		{
-			$("#formulario #inscripcion").text("Seguro ya estabas inscrito").fadeOut().fadeIn();
+			//$("#formulario #inscripcion").text("Seguro ya estabas inscrito").fadeOut().fadeIn();
 			$("#formulario  #confirmacion").text("Verifica que todos los datos estén bien escritos").slideDown();
 			$("#formulario  #email").focus();
 		}

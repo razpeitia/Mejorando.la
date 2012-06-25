@@ -31,7 +31,7 @@
 			<header>
 		        <div class="mejor"> 
 	          		<a id="maestros" href="http://maestrosdelweb.com" target="blank" title="Maestros del web"><img src="{{ STATIC_PREFIX }}/images/hola/maestros.png" alt="Maestros del web" height="43" width="43"></a>
-		            <h1><img class="logo-grande" src="{{ STATIC_PREFIX }}/images/hola/mejorandola.jpg" width="276" height="79" alt="Mejorando.la"></a>
+		            <h1><a href="http://mejorando.la" title="Mejorando.la"><img class="logo-grande" src="{{ STATIC_PREFIX }}/images/hola/mejorandola.jpg" width="276" height="79" alt="Mejorando.la"></a>
 		            </h1>
 		            <a id="cristalab" href="http://cristalab.com" target="blank" title="Cristalab"><img src="{{ STATIC_PREFIX }}/images/hola/cristalab.png" alt="Cristalab" height="43" width="43"></a>
 		        </div>
@@ -47,16 +47,11 @@
 			  	</div>
 			  	<div id="azul">
 		    		<form action="{% url website.views.hola %}" method="POST" id="formulario">
+		    			<input id="submit" type="submit" value="registrate">
 		    			<label id="inscripcion"></label>
 		    			<label id="confirmacion"></label>
-		    			
 		    			<input id="email" type="email" name="email" placeholder="Email" required>
-		    			<div id="slide">
-			    			<input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
-			    			<div class="sub-blanco">
-				    			<input id="submit" type="submit" value="registrate">
-				    		</div>
-			    		</div>		    		
+		    			<input id="nombre" type="text" name="nombre" placeholder="Nombre" required>		    	
 		    		</form>
 			  		<div id="items">
 			  			<a href="http://mejorando.la/cursos" class="item">
@@ -102,7 +97,7 @@
 		</section>
 	<footer>
 		<div class="centro">
-			<a href="http://twitter.com/freddier">@freddier</a><span>+</span><a href="http://twitter.com/cvander">@cvander</a>
+			<a href="http://twitter.com/freddier" target="blank">@freddier</a><span>+</span><a href="http://twitter.com/cvander" target="blank">@cvander</a>
 			<h4>Transmisión en vivo cada jueves</h4>
 		</div>
 	</footer>	

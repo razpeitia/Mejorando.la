@@ -6,16 +6,15 @@
 
 	function recepcion(datos)
 	{
-		datos = $.trim(datos);
-		if(datos=="OK")
-		{
-			$("#formulario #inscripcion").text("¡Ya estás inscrito!").fadeOut().fadeIn();
-		}
-		else
+		datos = JSON.parse(datos);
+
+		if(datos.error)
 		{
 			//$("#formulario #inscripcion").text("Seguro ya estabas inscrito").fadeOut().fadeIn();
 			$("#formulario  #confirmacion").text("Verifica que todos los datos estén bien escritos").slideDown();
 			$("#formulario  #email").focus();
+		} else {
+			$("#formulario #inscripcion").text("¡Ya estás inscrito!").fadeOut().fadeIn();
 		}
 	}
 

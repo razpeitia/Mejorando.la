@@ -13,9 +13,8 @@ import image
 from models import Setting, Video, VideoComentario, VideoComentarioForm, Curso, RegistroCurso
 import datetime
 import time
-import pycurl
+import requests
 import urllib
-import StringIO
 
 
 # La vista del home muestra el ultimo video destacado
@@ -246,25 +245,12 @@ def hola(solicitud):
                 'OPTIN_TIME': time.time()
             },
             'id': settings.MAILCHIMP_LISTID,
-            'double_optin': True,
-            'update_existing': False,
-            'replace_interests': True,
-            'send_welcome': False,
             'email_type': 'html'
         }
 
-        result = StringIO.StringIO()
-
-        conn = pycurl.Curl()
-        conn.setopt(pycurl.URL, 'http://us2.api.mailchimp.com/1.3/?method=listSubscribe')
-        conn.setopt(pycurl.WRITEFUNCTION, result.write)
-        conn.setopt(pycurl.POST, True)
-        conn.setopt(pycurl.POSTFIELDS, urllib.urlencode(payload))
-
-        conn.perform()
-        conn.close()
+        r = requests.post('http://us2.api.mailchimp.com/1.3/?method=listSubscribe', payload)
         
-        return HttpResponse(result.getvalue())
+        print r.text
 
         return HttpResponse('OK')
 

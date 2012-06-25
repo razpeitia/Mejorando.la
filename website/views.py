@@ -249,9 +249,7 @@ def hola(solicitud):
         }
 
         r = requests.post('http://us2.api.mailchimp.com/1.3/?method=listSubscribe', payload)
-        
-        print r.text
 
-        return HttpResponse('OK')
+        return HttpResponse(r.text)
 
     return render_to_response('website/hola.html', {})

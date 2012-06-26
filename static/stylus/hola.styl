@@ -1,0 +1,170 @@
+azul = #0670dd
+@import "classes.styl"
+body
+	overflow-x hidden
+	background white
+	color #555a5e
+a 
+	color #555a5e
+	text-decoration none
+img 
+	border none
+footer 
+	background #60676f
+	margin-bottom 20px
+	text-align center
+	//height 65px
+
+	.centro 
+		background white
+		max-width 470px 
+		margin 0 auto
+		//height 65px
+		padding 10px 0
+		span
+			margin 0 50px
+		a,span
+			font-size 25px
+			font-weight bold
+		h4 
+			text-transform uppercase
+			font-weight normal
+			letter-spacing 5px
+			font-size 12px
+#white
+	background white 
+	margin 0 auto
+	max-width 1000px
+	text-align center
+	
+
+#cuerpo
+	#azul 
+		background #0670dd
+	#portada
+		background url("../images/hola/portada.jpg") no-repeat top center
+		position relative
+		height 360px 
+		#titulo
+			background rgba(black,.7)
+			bottom 0
+			box-sizing border-box
+			color white
+			font-size 40px
+			font-weight normal
+			left 0
+			line-height 40px
+			padding 20px 25px
+			position absolute 
+			text-align right
+			text-transform uppercase
+			width 100%
+	#subtext
+		padding-bottom 20px
+		#texto 
+			color #555a5e
+			font-family Arial
+			line-height 22px
+			margin 0 auto
+			max-width 720px 
+			padding 30px
+			text-align center
+
+	#items
+		text-align center
+		font-size 0
+		//max-width 900px
+		margin 0 auto 70px auto
+		.item 
+			display inline-block
+			font-size 16px
+			width 25%
+			vertical-align top
+			h3 
+				color white
+				margin-bottom 10px
+			img 
+				margin-bottom 10px
+
+			.footer
+				background white url("../images/hola/shape.png") no-repeat top center
+				padding 20px
+				font-size 14px
+				font-family Arial
+				line-height 17px
+			&:hover img
+				animation-duration .3s 
+				animation-name item 
+				animation-iteration-count 5
+				
+@keyframes item
+	
+	50%
+		transform translateY(10px)
+	100%
+		transform translateY(0)
+	
+#email
+	position relative
+	z-index 2
+#formulario
+	background url("../images/hola/pattern_btn_post.png")
+	color #0073e8
+	max-width 880px
+	margin 0 auto 40px auto
+	padding-bottom 20px
+	label 
+		display block
+		color white
+		font-weight bold
+	input 
+		display block
+		margin 5px 0
+		font-family Arial
+		-webkit-box-sizing border-box
+	input[type="text"]
+		position absolute
+		right 0 
+		top 0
+		
+	input[type="text"],
+	input[type="email"]
+		border 3px solid rgba(azul,.5)
+		padding 10px 5px
+		border-radius 3px
+		font-size 16px
+		width 100%
+		max-width 740px
+		display inline-block
+		outline 0
+		box-sizing border-box
+		&:focus
+			border-color #fe9c13
+	input[type="submit"]
+		background #fe9c13
+		border 3px solid white
+		border-radius 2px 
+		color white
+		cursor pointer
+		display inline-block
+		font-size 17px
+		font-weight bold
+		margin  0 auto
+		padding 12px 40px 
+		position relative
+		text-transform uppercase
+		top -30px
+	#inputs 
+		position relative
+		max-width 740px
+		text-align left 
+		margin 0 auto
+@media screen and (max-width:1000px)
+	#cuerpo
+		#items
+			.item
+				width 100%
+				@extends .clearfix
+				.header 
+					float left
+					background azul

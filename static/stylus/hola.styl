@@ -10,6 +10,7 @@ a
 footer 
 	background #60676f
 	margin-bottom 20px
+	text-align center
 	//height 65px
 
 	.centro 
@@ -71,7 +72,7 @@ footer
 		text-align center
 		font-size 0
 		//max-width 900px
-		margin 0 auto
+		margin 0 auto 70px auto
 		.item 
 			display inline-block
 			font-size 16px
@@ -82,12 +83,26 @@ footer
 				margin-bottom 10px
 			img 
 				margin-bottom 10px
+
 			.footer
 				background white url("../images/hola/shape.png") no-repeat top center
 				padding 20px
 				font-size 14px
 				font-family Arial
 				line-height 17px
+			&:hover img
+				animation-duration .3s 
+				animation-name item 
+				animation-iteration-count 5
+				
+@keyframes item
+	
+	50%
+		transform translateY(10px)
+	100%
+		transform translateY(0)
+	
+
 
 #nombre
 	opacity 0
@@ -109,8 +124,10 @@ footer
 		font-family Arial
 		-webkit-box-sizing border-box
 	input[type="text"]
-		position relative
-		top -55px
+		position absolute
+		right 0 
+		top 0
+		
 	input[type="text"],
 	input[type="email"]
 		border 3px solid rgba(azul,.5)
@@ -120,6 +137,7 @@ footer
 		max-width 740px
 		width 100%
 		display inline-block
+		transition .3s
 		outline 0
 	input[type="submit"]
 		background #fe9c13
@@ -134,4 +152,6 @@ footer
 		cursor pointer
 		position relative
 		top -30px
+	#inputs 
+		position relative
 

@@ -25,7 +25,7 @@
 body{background:#0073e8;color:#fff;font-family:'open sans',Arial,Sans-serif;font-size:16px}
 h1{margin:0;}
 h1 a{position:relative;z-index:10}
-header{background:#fff;margin:0 auto;max-width:1000px;position:relative;height:96px;z-index:3;background:url("../images/hola/linea.jpg") repeat-x;}
+header{background:#fff;margin:0 auto;position:relative;height:96px;z-index:3;background:url("../images/hola/linea.jpg") repeat-x;}
 header h1 a img{position:relative;z-index:20}
 header #maestros{right:0;position:absolute;top:28px}
 header #cristalab{left:0;position:absolute;top:28px}

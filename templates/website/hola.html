@@ -16,7 +16,19 @@
     <noscript>
       <link rel="stylesheet" href="[fallback css]">
     </noscript><![endif]-->
-    
+    <script>
+    $(function(){
+    	var nombre = $('input[type="text"]');
+		var email = $('input[type="email"]');
+
+		email.focus(inputs);
+
+		function inputs(){
+			email.css('width',360);
+			nombre.css('width',360);
+		}
+    })   	
+    </script>
 </head>
 <body>
 	<header>

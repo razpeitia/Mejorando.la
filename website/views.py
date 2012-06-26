@@ -227,9 +227,6 @@ def hola(solicitud):
         email  = solicitud.POST['email']
         nombre = solicitud.POST['nombre']
 
-        if not settings.DEBUG:
-            send_mail('Subscripción', 'La siguiente persona se ha inscrito:\n\nNombre: %s\nE-mail:%s\nPaís:%s\n' % (nombre, email, pais), settings.FROM_SUBSCRIBIR_EMAIL, settings.TO_SUBSCRIBIR_EMAIL)
-
         # por si el usuario esta detras de un proxy
         if solicitud.META.get('HTTP_X_FORWARDED_FOR'):
             ip = solicitud.META['HTTP_X_FORWARDED_FOR'].split(',')[0]

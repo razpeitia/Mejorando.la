@@ -133,15 +133,15 @@ def registro_post_save(sender, instance, created, *args, **kwargs):
             mail = MailRegistroCurso.objects.get(code=instance.code, tipo='REG')
 
             # mail confirmando registro
-            send_mail(mail.subject, mail.content, settings.FROM_CURSOS_EMAIL, instance.email)
+            send_mail(mail.subject, mail.content, settings.FROM_CURSOS_EMAIL, [instance.email])
         except MailRegistroCurso.DoesNotExist: pass
 
-        if instance.tipo is 'deposito':
+        if instance.tipo == 'deposito':
             try:
                 mail_inst = MailRegistroCurso.objects.get(code=instance.code, tipo='INS')
 
                 # mail con instrucciones de deposito
-                send_mail(mail_inst.subject, mail_inst.content, settings.FROM_CURSOS_EMAIL, instance.email)                
+                send_mail(mail_inst.subject, mail_inst.content, settings.FROM_CURSOS_EMAIL, [instance.email])                
             except MailRegistroCurso.DoesNotExist: pass
 
     if instance.pago:
@@ -151,7 +151,7 @@ def registro_post_save(sender, instance, created, *args, **kwargs):
             mail_pago = MailRegistroCurso.objects.get(code=instance.code, tipo='PAG')
 
             # mail confirmando el pago
-            send_mail(mail_pago.subject, mail_pago.content, settings.FROM_CURSOS_EMAIL, instance.email)
+            send_mail(mail_pago.subject, mail_pago.content, settings.FROM_CURSOS_EMAIL, [instance.email])
         except MailRegistroCurso.DoesNotExist: pass
     
         

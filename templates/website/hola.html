@@ -20,12 +20,22 @@
     $(function(){
     	var nombre = $('input[type="text"]');
 		var email = $('input[type="email"]');
-
-		email.focus(inputs);
-
+		focus = true;
+		email.on('focus',function(){
+			if(focus == true){
+				inputs()
+				focus = false;
+			}
+		})
+	
+		
 		function inputs(){
-			email.css('max-width',360);
-			nombre.css('max-width',360);
+			email.animate({'max-width':360,'opacity':.5},500,fin);
+			nombre.animate({'max-width':360,'opacity':.5},500,fin);
+		}
+		function fin(){
+			nombre.animate({'opacity':1});
+			email.animate({'opacity':1});
 		}
     })   	
     </script>

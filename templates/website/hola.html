@@ -16,14 +16,7 @@
     <noscript>
       <link rel="stylesheet" href="[fallback css]">
     </noscript><![endif]-->
-    <script>
-    	$(function(){
-    		$("#email").focus(function(){	
-    			$("#nombre").css({'opacity':'1'})
-    			$("#slide").animate({'margin-top':0},500)
-    		})
-    	})
-    </script>
+    
 </head>
 <body>
 	<div id="white">
@@ -50,8 +43,10 @@
 		    			<input id="submit" type="submit" value="registrate">
 		    			<label id="inscripcion"></label>
 		    			<label id="confirmacion"></label>
-		    			<input id="email" type="email" name="email" placeholder="Email" required>
-		    			<input id="nombre" type="text" name="nombre" placeholder="Nombre" required>		    	
+		    			<div id="inputs">
+			    			<input id="email" type="email" name="email" placeholder="Email" required>
+			    			<input id="nombre" type="text" name="nombre" placeholder="Nombre" required>	
+		    			</div>	    	
 		    		</form>
 			  		<div id="items">
 			  			<a href="http://mejorando.la/cursos" class="item">
@@ -84,7 +79,7 @@
 			  			
 			  			<a href="http://mejorando.la/videos" class="item">
 			  				<div class="header">
-			  					<h3>Cursos</h3>
+			  					<h3>Videos</h3>
 			  					<img src="{{STATIC_PREFIX }}/images/hola/videos.jpg" alt="cursos" height="97" width="97"/>
 			  				</div>
 			  				<div class="footer">

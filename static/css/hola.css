@@ -18,16 +18,18 @@ footer .centro h4{text-transform:uppercase;font-weight:normal;letter-spacing:5px
 #cuerpo #azul{background:#0670dd}
 #cuerpo #portada{background:url("../images/hola/portada.jpg") no-repeat top center;position:relative;height:360px;}
 #cuerpo #portada #titulo{background:rgba(0,0,0,0.70);bottom:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;font-size:40px;font-weight:normal;left:0;line-height:40px;padding:20px 25px;position:absolute;text-align:right;text-transform:uppercase;width:100%}
+#cuerpo #subtext{padding-bottom:20px;}
 #cuerpo #subtext #texto{color:#555a5e;font-family:Arial;line-height:22px;margin:0 auto;max-width:720px;padding:30px;text-align:center}
 #cuerpo #items{text-align:center;font-size:0;margin:0 auto;}
-#cuerpo #items .item{display:inline-block;zoom:1;*display:inline;font-size:16px;width:25%;}
+#cuerpo #items .item{display:inline-block;zoom:1;*display:inline;font-size:16px;width:25%;vertical-align:top;}
 #cuerpo #items .item h3{color:#fff;margin-bottom:10px}
 #cuerpo #items .item img{margin-bottom:10px}
 #cuerpo #items .item .footer{background:#fff url("../images/hola/shape.png") no-repeat top center;padding:20px;font-size:14px;font-family:Arial;line-height:17px}
 #nombre{opacity:0 ;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0) ;filter:alpha(opacity=0) ;-webkit-transition:.3s}
 #email{position:relative;z-index:2}
-#formulario{background:url("../images/hola/pattern_btn_post.png");color:#0073e8;max-width:880px;margin:0 auto 50px auto;}
+#formulario{background:url("../images/hola/pattern_btn_post.png");color:#0073e8;max-width:880px;margin:0 auto 40px auto;padding-bottom:20px;}
 #formulario label{display:block}
 #formulario input{display:block;margin:5px 0;font-family:Arial;-webkit-box-sizing:border-box}
-#formulario input[type="text"],#formulario input[type="email"]{border:3px solid rgba(6,112,221,0.50);padding:10px 5px;-o-border-radius:3px;-ms-border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;font-size:16px;max-width:590px;width:100%;display:inline-block;zoom:1;*display:inline;outline:0}
-#formulario input[type="submit"]{background:#0073e8;border:none;-o-border-radius:2px;-ms-border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#fff;padding:12px 40px;text-transform:uppercase;font-size:14px;font-weight:bold;margin:0 auto;cursor:pointer}
+#formulario input[type="text"]{position:relative;top:-55px}
+#formulario input[type="text"],#formulario input[type="email"]{border:3px solid rgba(6,112,221,0.50);padding:10px 5px;-o-border-radius:3px;-ms-border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;font-size:16px;max-width:740px;width:100%;display:inline-block;zoom:1;*display:inline;outline:0}
+#formulario input[type="submit"]{background:#fe9c13;border:3px solid #fff;-o-border-radius:2px;-ms-border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#fff;padding:12px 40px;text-transform:uppercase;font-size:17px;font-weight:bold;margin:0 auto;cursor:pointer;position:relative;top:-30px}

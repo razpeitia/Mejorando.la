@@ -159,12 +159,37 @@ footer
 		max-width 740px
 		text-align left 
 		margin 0 auto
-@media screen and (max-width:1000px)
+@media screen and (max-width:740px)
+	footer
+		.centro
+			span 
+				margin 0 10px
 	#cuerpo
+		#azul
+			background white
 		#items
 			.item
 				width 100%
 				@extends .clearfix
+				//border-bottom 3px solid #0073E8
+				.footer
+					background none
+					padding 20px 10px
+					padding-left 150px
+					text-align left
 				.header 
 					float left
 					background azul
+					padding 10px
+					width 120px
+		#portada
+			#titulo
+				font-size 20px 
+				line-height 25px
+	#formulario
+		input[type="text"],
+		input[type="email"]
+			display block
+			margin 10px auto
+			max-width 95% !important
+			position static

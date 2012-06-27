@@ -36,8 +36,13 @@ footer .centro h4{text-transform:uppercase;font-weight:normal;letter-spacing:5px
 #formulario input[type="text"]:focus,#formulario input[type="email"]:focus{border-color:#fe9c13}
 #formulario input[type="submit"]{background:#fe9c13;border:3px solid #fff;-o-border-radius:2px;-ms-border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#fff;cursor:pointer;display:inline-block;zoom:1;*display:inline;font-size:17px;font-weight:bold;margin:0 auto;padding:12px 40px;position:relative;text-transform:uppercase;top:-30px}
 #formulario #inputs{position:relative;max-width:740px;text-align:left;margin:0 auto}
-@media screen and (max-width:1000px){#cuerpo #items .item{width:100%;}
-#cuerpo #items .item .header{float:left;background:#0670dd}
+@media screen and (max-width:740px){footer .centro span{margin:0 10px}
+#cuerpo #azul{background:#fff}
+#cuerpo #items .item{width:100%;}
+#cuerpo #items .item .footer{background:none;padding:20px 10px;padding-left:150px;text-align:left}
+#cuerpo #items .item .header{float:left;background:#0670dd;padding:10px;width:120px}
+#cuerpo #portada #titulo{font-size:20px;line-height:25px}
+#formulario input[type="text"],#formulario input[type="email"]{display:block;margin:10px auto;max-width:95% !important;position:static}
 }@-moz-keyframes item{50%{-o-transform:translateY(10px);-ms-transform:translateY(10px);-moz-transform:translateY(10px);-webkit-transform:translateY(10px);transform:translateY(10px)}
 100%{-o-transform:translateY(0);-ms-transform:translateY(0);-moz-transform:translateY(0);-webkit-transform:translateY(0);transform:translateY(0)}
 }@-webkit-keyframes item{50%{-o-transform:translateY(10px);-ms-transform:translateY(10px);-moz-transform:translateY(10px);-webkit-transform:translateY(10px);transform:translateY(10px)}

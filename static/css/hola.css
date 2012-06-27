@@ -28,7 +28,7 @@ footer .centro h4{text-transform:uppercase;font-weight:normal;letter-spacing:5px
 #cuerpo #items .item .footer{background:#fff url("../images/hola/shape.png") no-repeat top center;padding:20px;font-size:14px;font-family:Arial;line-height:17px}
 #cuerpo #items .item:hover img{-o-animation-duration:.3s;-ms-animation-duration:.3s;-moz-animation-duration:.3s;-webkit-animation-duration:.3s;animation-duration:.3s;-o-animation-name:item;-ms-animation-name:item;-moz-animation-name:item;-webkit-animation-name:item;animation-name:item;-o-animation-iteration-count:5;-ms-animation-iteration-count:5;-moz-animation-iteration-count:5;-webkit-animation-iteration-count:5;animation-iteration-count:5}
 #email{position:relative;z-index:2}
-#formulario{background:url("../images/hola/pattern_btn_post.png");color:#0073e8;max-width:880px;margin:0 auto 40px auto;padding-bottom:20px;}
+#formulario{background:#0073e8 url("../images/hola/pattern_btn_post.png");color:#0073e8;max-width:880px;margin:0 auto 40px auto;padding-bottom:20px;}
 #formulario label{display:block;color:#fff;font-weight:bold}
 #formulario input{display:block;margin:5px 0;font-family:Arial;-webkit-box-sizing:border-box}
 #formulario input[type="text"]{position:absolute;right:0;top:0}

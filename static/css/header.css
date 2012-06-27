@@ -21,7 +21,7 @@ header h1 a img{position:relative;z-index:20}
 header #maestros{left:220px;position:absolute;top:3px}
 header #cristalab{left:285px;position:absolute;top:3px}
 header .logo-grande{display:none}
-header .mejor{background:url("../images/logos/linea.jpg") repeat-x left top;height:42px;position:relative;text-align:left;width:450px;z-index:7}
+header .mejor{background:url("../images/logos/linea.jpg") repeat-x left top;height:42px;position:relative;text-align:left;width:320px;z-index:7}
 .menu{background:#323e4a;font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;}
 .menu ul{font-size:0;padding:0;text-align:right}
 .menu li{display:inline-block;font-size:14px;font-weight:bold;position:relative;text-align:center;text-transform:uppercase;vertical-align:top;z-index:5;}

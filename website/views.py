@@ -147,6 +147,9 @@ def regenerate(solicitud):
         image.resize(image.SINGLE, video.imagen)
         image.resize(image.HOME, video.imagen)
 
+    for curso in Curso.objects.all():
+        image.resize(image.THUMB, curso.imagen)
+
     return redirect('/')
 
 

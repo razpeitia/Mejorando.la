@@ -89,6 +89,17 @@ class Curso(models.Model):
     def __unicode__(self):
         return self.titulo
 
+    def save(self, *args, **kwargs):
+        super(Video, self).save(*args, **kwargs)
+
+        if not self.id and not self.imagen:
+            return
+
+        image.resize(image.THUMB, self.imagen)
+
+    def get_thumb_image_url(self):
+        return image.get_url_by(image.THUMB, self.imagen)
+
     def get_image_url(self):
         return '%s%s' % (settings.MEDIA_URL, str(self.imagen))
 

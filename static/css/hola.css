@@ -7,20 +7,20 @@
 .clearfix:after{clear:both;content:"\0020";display:block;height:0;visibility:hidden}
 .clear{display:block;clear:both;zoom:1}
 .nomargin{margin:0 !important}
-body{overflow-x:hidden;background:#fff;color:#555a5e}
+body{overflow-x:hidden;background:#a6adb5;color:#555a5e}
 a{color:#555a5e;text-decoration:none}
 img{border:none}
-footer{background:#60676f;margin-bottom:20px;text-align:center;}
+footer{background:#60676f;border-bottom:30px solid #fff;text-align:center;}
 footer .centro{background:#fff;max-width:470px;margin:0 auto;padding:10px 0;}
 footer .centro span{margin:0 50px}
 footer .centro a,footer .centro span{font-size:25px;font-weight:bold}
 footer .centro h4{text-transform:uppercase;font-weight:normal;letter-spacing:5px;font-size:12px}
 #white{background:#fff;margin:0 auto;max-width:1000px;text-align:center}
 #cuerpo #azul{background:#0670dd}
-#cuerpo #portada{background:url("../images/hola/portada.jpg") no-repeat top center;position:relative;height:360px;}
+#cuerpo #portada{background:url("../images/hola/portada.jpg") no-repeat top center;position:relative;height:230px;}
 #cuerpo #portada #titulo{background:rgba(0,0,0,0.70);bottom:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;font-size:40px;font-weight:normal;left:0;line-height:40px;padding:20px 25px;position:absolute;text-align:right;text-transform:uppercase;width:100%}
 #cuerpo #subtext{padding-bottom:20px;}
-#cuerpo #subtext #texto{color:#555a5e;font-family:Arial;line-height:22px;margin:0 auto;max-width:720px;padding:30px;text-align:center}
+#cuerpo #subtext #texto{color:#555a5e;font-family:Arial;line-height:22px;margin:0 auto;max-width:850px;padding:20px 0;text-align:center}
 #cuerpo #items{text-align:center;font-size:0;margin:0 auto 70px auto;}
 #cuerpo #items .item{display:inline-block;zoom:1;*display:inline;font-size:16px;width:25%;vertical-align:top;}
 #cuerpo #items .item h3{color:#fff;margin-bottom:10px}

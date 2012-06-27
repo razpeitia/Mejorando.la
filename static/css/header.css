@@ -1,0 +1,17 @@
+header{background:#323e4a;margin:0 auto;max-width:1000px;position:relative;z-index:3;}
+header h1 a img{position:relative;z-index:20}
+header #maestros{left:360px;position:absolute;top:3px}
+header #cristalab{left:420px;position:absolute;top:3px}
+header .logo-chico{display:none}
+header .mejor{background:url("../images/logos/linea.jpg") repeat-x left top;height:42px;position:relative;text-align:left;width:450px;z-index:7}
+.menu{background:#323e4a;font-family:Arial;margin:0 auto;position:absolute;top:0;width:100%;z-index:6;}
+.menu ul{font-size:0;padding:0;text-align:right}
+.menu li{display:inline-block;font-size:14px;font-weight:bold;position:relative;text-align:center;text-transform:uppercase;vertical-align:top;z-index:5;}
+.menu li:hover{background:#1c2127}
+.menu a{display:block;height:42px;line-height:42px;color:#898c93;float:right;text-align:center;padding:0 10px}
+@media screen and (max-width:800px){.menu{top:42px;}
+.menu ul{min-width:320px;padding-top:0;text-align:center;libox-sizing:border-box;width:auto;}
+.menu ul:nth-child(even){background:none;border-left:1px solid #fff;border-right:1px solid #fff}
+.menu ul a{height:44px;line-height:44px}
+}@media screen and (max-width:480px){.menu ul li a{padding:0 5px;font-size:12px}
+}

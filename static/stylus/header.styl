@@ -1,0 +1,85 @@
+header
+	background #323e4a
+	margin 0 auto
+	max-width 1000px 
+	position relative
+	z-index 3
+
+	h1 a img 
+		position relative 
+		z-index 20
+	#maestros
+		left 360px
+		position absolute
+		top 3px
+	#cristalab
+		left 420px
+		position absolute
+		top 3px
+	.logo-chico 
+		display none
+	.mejor
+		background url("../images/logos/linea.jpg") repeat-x left top 
+		height 42px
+		position relative
+		text-align left
+		width 450px
+		z-index 7
+.menu
+	background #323e4a
+	font-family Arial
+	margin 0 auto
+	position absolute
+	top 0
+	width 100%
+	z-index 6
+	ul 
+		font-size 0
+		padding 0
+		text-align right
+
+			
+	    li 
+			display inline-block
+			font-size 14px
+			font-weight bold
+			position relative
+			text-align center
+			text-transform uppercase 
+			vertical-align top
+			z-index 5
+			&:hover 
+				background #1c2127
+
+		a
+			display block 
+			height 42px
+			line-height 42px
+			color #898c93
+			float right
+			text-align center
+			padding 0 10px 
+@media screen and (max-width:800px)
+	.menu 
+			top 42px
+
+			ul 
+				min-width 320px
+				padding-top 0
+				text-align center
+				li 
+				    box-sizing border-box
+				    width auto
+				    &:nth-child(even)
+						background none 
+						border-left 1px solid white 
+						border-right 1px solid white
+				    a 
+						height 44px 
+						line-height 44px
+@media screen and (max-width:480px)
+	.menu 
+
+		ul  li a 
+			padding 0 5px	
+			font-size 12px

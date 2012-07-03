@@ -204,7 +204,6 @@ def cursos_registro(solicitud):
 
     return HttpResponse('ERROR')
 
-@require_POST
 def cursos_pago_success(solicitud):
 
     if solicitud.POST.get('payer_email') and solicitud.POST.get('transaction_subject'):

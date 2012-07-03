@@ -198,6 +198,8 @@ def cursos_registro(solicitud):
 
         registro.save()
 
+        solicitud.session['registro_id'] = registro.id
+
         return HttpResponse('OK')
 
     return HttpResponse('ERROR')
@@ -208,9 +210,14 @@ def cursos_pago_success(solicitud):
     if solicitud.POST.get('payer_email') and solicitud.POST.get('transaction_subject'):
         registro = RegistroCurso.objects.get(email=solicitud.POST.get('payer_email'), curso=solicitud.POST.get('transaction_subject'))
 
+        if not registro and solicitud.session.get('registro_id'):
+            registro = RegistroCurso.get(id=solicitud.session.get('registro_id'))
+
         if registro:
             registro.pago = True
             registro.save()
+    elif solicitud.session.get('registro_id'):
+        registro = RegistroCurso.get(id=solicitud.session.get('registro_id'))        
 
     return redirect('/cursos')
 

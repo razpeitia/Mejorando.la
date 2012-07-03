@@ -218,6 +218,10 @@ def cursos_pago_success(solicitud):
     elif solicitud.session.get('registro_id'):
         registro = RegistroCurso.get(id=solicitud.session.get('registro_id'))        
 
+        if registro:
+            registro.pago = True
+            registro.save()
+
     return redirect('/cursos')
 
 @login_required(login_url='/admin')

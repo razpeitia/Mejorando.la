@@ -25,9 +25,23 @@ Ext.onReady(function () {
 		]
 	});
 
+	var combo = Ext.create('Ext.form.ComboBox', {
+		fieldLabel: 'Elige un usuario',
+		store: store,
+		queryMode: 'local',
+		displayField: 'name',
+		valueField: 'name',
+		listeners: {
+			'select': function (combo, records) {
+				grid.store.clearFilter();
+				grid.store.filter('name', records[0].get('name'));
+			}
+		}
+	});
+
 	Ext.create('Ext.container.Container', {
 		renderTo: Ext.getBody(),
 		margin:10,
-		items: [ grid ]
+		items: [ combo, grid ]
 	});
 });

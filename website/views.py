@@ -263,3 +263,22 @@ def hola(solicitud):
         return HttpResponse(r.text)
 
     return render_to_response('website/hola.html', {})
+
+@login_required(login_url='/admin')
+def usuarios_chat(solicitud):
+    from pymongo import Connection
+
+    conn = Connection()
+
+    db = conn[settings.CHAT_DB]
+    users = []
+    for u in db.users.find():
+        if u['name'] is None: continue
+
+        users.append({
+            'name': u['name'],
+            'red': u['red'],
+            'messages': db.messages.find({ 'user.name' : u['name'] }).count(),
+        })
+
+    return render_to_response('website/usuarios_chat.html', { 'usuarios': simplejson.dumps(users) })

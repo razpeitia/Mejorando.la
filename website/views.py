@@ -6,12 +6,15 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.core import serializers
+from django.utils import simplejson
 from akismet import Akismet
 import GeoIP
 import image
 from models import Setting, Video, VideoComentario, VideoComentarioForm, Curso, RegistroCurso
 import datetime
 import time
+import requests
+import urllib
 
 
 # La vista del home muestra el ultimo video destacado
@@ -144,6 +147,9 @@ def regenerate(solicitud):
         image.resize(image.SINGLE, video.imagen)
         image.resize(image.HOME, video.imagen)
 
+    for curso in Curso.objects.all():
+        image.resize(image.THUMB, curso.imagen)
+
     return redirect('/')
 
 
@@ -192,15 +198,25 @@ def cursos_registro(solicitud):
 
         registro.save()
 
+        solicitud.session['registro_id'] = registro.id
+
         return HttpResponse('OK')
 
     return HttpResponse('ERROR')
 
-@require_POST
 def cursos_pago_success(solicitud):
 
     if solicitud.POST.get('payer_email') and solicitud.POST.get('transaction_subject'):
         registro = RegistroCurso.objects.get(email=solicitud.POST.get('payer_email'), curso=solicitud.POST.get('transaction_subject'))
+
+        if not registro and solicitud.session.get('registro_id'):
+            registro = RegistroCurso.get(id=solicitud.session.get('registro_id'))
+
+        if registro:
+            registro.pago = True
+            registro.save()
+    elif solicitud.session.get('registro_id'):
+        registro = RegistroCurso.get(id=solicitud.session.get('registro_id'))        
 
         if registro:
             registro.pago = True
@@ -215,3 +231,35 @@ def cursos_registros(solicitud):
 
 def locateme(solicitud):
     return HttpResponse(get_pais(solicitud.META))
+
+
+def hola(solicitud):
+
+    if solicitud.method == 'POST' and solicitud.POST.get('email') and solicitud.POST.get('nombre'):
+        pais   = get_pais(solicitud.META)
+        email  = solicitud.POST['email']
+        nombre = solicitud.POST['nombre']
+
+        # por si el usuario esta detras de un proxy
+        if solicitud.META.get('HTTP_X_FORWARDED_FOR'):
+            ip = solicitud.META['HTTP_X_FORWARDED_FOR'].split(',')[0]
+        else:
+            ip = solicitud.META['REMOTE_ADDR']
+
+        payload = {
+            'email_address': email,
+            'apikey': settings.MAILCHIMP_APIKEY,
+            'merge_vars': {
+                'FNAME': nombre,
+                'OPTINIP': ip,
+                'OPTIN_TIME': time.time()
+            },
+            'id': settings.MAILCHIMP_LISTID,
+            'email_type': 'html'
+        }
+
+        r = requests.post('http://us2.api.mailchimp.com/1.3/?method=listSubscribe', simplejson.dumps(payload))
+
+        return HttpResponse(r.text)
+
+    return render_to_response('website/hola.html', {})

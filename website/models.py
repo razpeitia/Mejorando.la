@@ -89,6 +89,17 @@ class Curso(models.Model):
     def __unicode__(self):
         return self.titulo
 
+    def save(self, *args, **kwargs):
+        super(Video, self).save(*args, **kwargs)
+
+        if not self.id and not self.imagen:
+            return
+
+        image.resize(image.THUMB, self.imagen)
+
+    def get_thumb_image_url(self):
+        return image.get_url_by(image.THUMB, self.imagen)
+
     def get_image_url(self):
         return '%s%s' % (settings.MEDIA_URL, str(self.imagen))
 
@@ -110,6 +121,17 @@ class RegistroCurso(models.Model):
     def __unicode__(self):
         return '%s en %s' % (self.nombre, self.curso)
 
+class MailRegistroCurso(models.Model):
+    TIPOS = (
+        ('REG', 'Registro'),
+        ('INS', 'Instrucción'),
+        ('PAG', 'Pago'),
+    )
+
+    subject = models.CharField(max_length=500)
+    content = models.TextField()
+    code    = models.CharField(max_length=100)
+    tipo    = models.CharField(max_length=3, choices=TIPOS)
 
 # hooks
 def registro_post_save(sender, instance, created, *args, **kwargs):
@@ -117,8 +139,32 @@ def registro_post_save(sender, instance, created, *args, **kwargs):
 
     if created:
         send_mail('Registro al "%s"' % instance.curso, 'Nombre: %s\nEmail: %s\nTelefono: %s\nTipo de pago: %s\nCurso: %s\nPais: %s\n' % (instance.nombre, instance.email, instance.telefono, instance.tipo, instance.curso, instance.pais), settings.FROM_CURSOS_EMAIL, settings.TO_CURSOS_EMAIL)
+
+        try:    
+            mail = MailRegistroCurso.objects.get(code=instance.code, tipo='REG')
+
+            # mail confirmando registro
+            send_mail(mail.subject, mail.content, settings.FROM_CURSOS_EMAIL, [instance.email])
+        except MailRegistroCurso.DoesNotExist: pass
+
+        if instance.tipo == 'deposito':
+            try:
+                mail_inst = MailRegistroCurso.objects.get(code=instance.code, tipo='INS')
+
+                # mail con instrucciones de deposito
+                send_mail(mail_inst.subject, mail_inst.content, settings.FROM_CURSOS_EMAIL, [instance.email])                
+            except MailRegistroCurso.DoesNotExist: pass
+
     if instance.pago:
         send_mail('Pago de "%s"' % instance.curso, '%s (%s) ha realizado el pago de %s por %s persona(s) mediante paypal al "%s"' % (instance.nombre, instance.email, instance.total, instance.personas, instance.curso), settings.FROM_CURSOS_EMAIL, settings.TO_CURSOS_EMAIL)
+
+        try:    
+            mail_pago = MailRegistroCurso.objects.get(code=instance.code, tipo='PAG')
+
+            # mail confirmando el pago
+            send_mail(mail_pago.subject, mail_pago.content, settings.FROM_CURSOS_EMAIL, [instance.email])
+        except MailRegistroCurso.DoesNotExist: pass
+    
         
 
 post_save.connect(registro_post_save, sender=RegistroCurso)

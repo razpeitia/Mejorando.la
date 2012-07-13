@@ -31,6 +31,8 @@ urlpatterns = patterns('',
     url(r'^locateme/?$', 'website.views.locateme'),
 
     url(r'^hola/?$', 'website.views.hola'),
+
+    url(r'^usuarios_chat$', 'website.views.usuarios_chat'),
 )
 
 if settings.DEBUG:

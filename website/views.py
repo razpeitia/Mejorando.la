@@ -109,10 +109,10 @@ def video(solicitud, video_slug):
                         agent=settings.AKISMET_AGENT)
             if api.verify_key():
                 # por si el usuario esta detras de un proxy
-                if 'HTTP_X_FORWARDED_FOR' in meta and meta['HTTP_X_FORWARDED_FOR']:
-                    ip = meta['HTTP_X_FORWARDED_FOR'].split(',')[0]
+                if 'HTTP_X_FORWARDED_FOR' in solicitud.META and solicitud.META['HTTP_X_FORWARDED_FOR']:
+                    ip = solicitud.META['HTTP_X_FORWARDED_FOR'].split(',')[0]
                 else:
-                    ip = meta['REMOTE_ADDR']
+                    ip = solicitud.META['REMOTE_ADDR']
 
                 if not api.comment_check(comment=comentario.content, data={
                         'user_ip': ip,

@@ -90,7 +90,7 @@ class Curso(models.Model):
         return self.titulo
 
     def save(self, *args, **kwargs):
-        super(Video, self).save(*args, **kwargs)
+        super(Curso, self).save(*args, **kwargs)
 
         if not self.id and not self.imagen:
             return

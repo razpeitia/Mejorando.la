@@ -33,6 +33,8 @@ urlpatterns = patterns('',
     url(r'^hola/?$', 'website.views.hola'),
 
     url(r'^usuarios_chat$', 'website.views.usuarios_chat'),
+
+    url(r'^conferencia/?$', 'website.views.conferencia'),
 )
 
 if settings.DEBUG:

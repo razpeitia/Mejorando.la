@@ -1,0 +1,37 @@
+{% load static %} {% get_static_prefix as STATIC_PREFIX %}
+<!doctype html>
+<html lang="es">
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="{{ STATIC_PREFIX }}css/guatemala.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<link rel="stylesheet" href="iexplorer.css"/>
+	<![endif]-->
+	<script type="text/javascript">
+	var analyticsFileTypes = [''];
+	var analyticsEventTracking = 'enabled';
+	</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-76863-8']);
+		_gaq.push(['_trackPageview']);
+		_gaq.push(['_trackPageLoadTime']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="{{ STATIC_PREFIX }}js/jquery.form.js"></script>
+<script src="{{ STATIC_PREFIX }}js/codiguito-conferencia.js"></script>
+</body>
+
+</html>

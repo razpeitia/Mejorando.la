@@ -1,33 +1,41 @@
-{% extends "website/conferencia/base.html" %}
-
-
-{% block body %}
-
-
+<!doctype html>
+<html lang="es">
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/guatemala.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<link rel="stylesheet" href="iexplorer.css"/>
+	<![endif]-->
+	<script type="text/javascript">
+	var analyticsFileTypes = [''];
+	var analyticsEventTracking = 'enabled';
+	</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-76863-8']);
+		_gaq.push(['_trackPageview']);
+		_gaq.push(['_trackPageLoadTime']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+</head>
+<body>
 	<div id="wrapper">
 		<section id="portada">
 		<div class="content">
 			<div id="cinta">
 			</div>
 			<header>
-				<a id="logo" href="http://mejorando.la/conferencia" title="mejorando.la/conferencia"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/mejorandola-conferencia-logo.png"/></a>
+				<a id="logo" href="http://mejorando.la/conferencia" title="mejorando.la/conferencia"><img src="images-guatemala/mejorandola-conferencia-logo.png"/></a>
 				<h2 class="stream"><strong>25 de agosto</strong>streaming para el mundo</h2>
 				
-				<article id="inscripcion">
-
-	                <h3>¡Aparta tu lugar YA!</h3>
-	                <form action="mailchimp.php" method="POST" id="formulario">
-
-	                    <input class="input" type="text" id="nombre" name="nombre" class="text-field"  placeholder="Nombre"required />
-
-	                    <input class="input" type="email" name="email" class="text-field" placeholder="Email" required />
-
-	                    <input class="submit" type="submit" value="inscribeme" id="inscribete-btn" />
-
-	                </form>
-
-	               <!--  <p id="confirmacion"><strong>¡Revisa tu mail!</strong> Twittea, Facebookea, Plusea e invita a tus amigos.</p> -->
-	            </article>
+				
 	            <aside id="social">
 	                	<span>Comparte la experiencia</span>
 	                	<div class="cont twitter">
@@ -54,11 +62,11 @@
 	                    </div>
                 	</aside>
 			</header>
-			<article id="tema">
+			<article id="tema" style="height:auto">
 				<nav>
 					<ul>
-						<li><a href="http://maestrosdelweb.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/maestrosdelweb.png" alt="cristalab" width="140"/></a>
-						<li><a href="http://cristalab.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cristalab.png" alt="cristalab" width="140"/></a>
+						<li><a href="http://maestrosdelweb.com" target="blank"><img src="images-guatemala/maestrosdelweb.png" alt="cristalab" width=""/></a>
+						<li><a href="http://cristalab.com" target="blank"><img src="images-guatemala/cristalab.png" alt="cristalab" width=""/></a>
 					</ul>
 				</nav>
 				<div class="wrap">
@@ -68,40 +76,64 @@
 	                <p>Participa del evento a través de nuestro Streaming en vivo. Se impartirán <strong>12 conferencias</strong> desde Centroamérica sobre el futuro del emprendimiento y liderazgo tecnológico. 
 
 	                <!--p>Quedas invitado a la Ciudad de Guatemala para compartir con los conferencistas del evento en el Auditorio Juan Bautista Gutiérrez en la Universidad Francisco Marroquín.</p-->
-	                <div id="locacion">
-		            	<h2>Acompañanos</h2>
-		            	<p>Quedas invitado a la Ciudad de 
-						Guatemala para compartir con los 
-						conferencistas del evento en  el 
-						Auditorio Juan Bautista Gutiérrez 
-						en la Universidad Francisco 
-						Marroquín.</p>
-						<div class="loc"></div>
-		            </div>
+	            
 	            </div>        
 			</article>
 		</section>			
 		</div>
-		<section id="sponsors-ghost">
+		<section id="sponsors-ghost" style="background:none">
 		</section>
 		<section id="sponsors">
 			<div class="content">
 				<div class="col oro">
-					 <a href="http://www.ufm.edu"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/ufm.png" height="56" width="113" alt="Universidad Francisco Marroquín"/></a>					
-					<a href="http://mediastream.cl"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/mediastream.png" height="56" width="231" alt="mediastream" id="Mediastream"/></a>			
+					 <a href="http://www.ufm.edu"><img src="images-guatemala/sponsors/ufm.png" height="56" width="113" alt="Universidad Francisco Marroquín"/></a>					
+					<a href="http://mediastream.cl"><img src="images-guatemala/sponsors/mediastream.png" height="56" width="231" alt="mediastream" id="Mediastream"/></a>			
 				</div>
-				<div class="col plata">
-					<a href="http://www.infranetworking.com"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/infranetworking.png" height="56" width="217" alt="Infranetworking"/></a>
-
-					 <a href="http://www.ilifebelt.com"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/life-belt.png" height="56" width="118" alt="i Life Belt"/></a>
-
-					 <a href="http://www.gpovallas.com/paises/guatemala/"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/gpo.png" height="56" width="164" alt="gpovallas"/></a>
+				
+			</div>
+		</section>
+		<section id="sede">
+			<div class="content">
+				<div class="bus">
+					<h3>El Bus Alegre desde El Salvador</h3>
+					<p>Partiendo de San Salvador a las 6:00 am via Pullmantur. Y llegando a la Ciudad de Guatemala a las 13:00 pm </p>
+					<div class="fila">
+						<p>Hospedaje en el Hotel Lo Máximo de Guate.</p> <img id="hotel1" src="images-guatemala/hotel1.jpg" alt="hotel Maximo"/>
+					</div>
+					<div class="fila">
+						<img id="hotel2" src="images-guatemala/hotel2.jpg" alt="hotel Maximo"/><p>Tips de viaje: llevar churritos para el camino, empacar una media docena de pupusas para compatir con los hermanos centroamericanos</p>
+					</div>
 				</div>
-		
-				<div class="col cobre">
-					<a href="http://www.libertopolis.com/"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/libertopolis.png" height="56" width="134" alt="Libertopolis"/></a> 
-					<a href="http://www.prensalibre.com/"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/prensa-libre.png"  height="56" width="134" alt="Prensa Libre"/></a>
+			</div>
+		</section>
+		<section id="viaje">
+			<div class="content">
+				<div class="mensaje">
+					<h3>Precios e Inscripcion</h3>
+					<h4>250 USD (tarjeta o paypal) incluye inscripcion y transporte<h4>
+					<p>Completa los campos del formulario y te entregaremos mas detalles</p>
 				</div>
+				<form action="" id="f-viaje">
+					<input type="text" name="nombre" placeholder="Nombre" class="input" required/>
+					<input type="text" name="apellidos" placeholder="Apellidos" class="input" required/>
+					<input type="email" name="email" placeholder="Correo electrónico" class="input" required/>
+					<div class="sexo">
+						<label class="label">sexo</label>
+						<input type="radio" name="sexo" value="hombre" class="tipo" checked/><span>hombre</span>
+						<input type="radio" name="sexo" value="mujer" class="tipo"/><span>mujer</span>
+					</div>
+					<select name="tipo" class="input">
+						<option>Tipo de habitación</option>
+						<option value="simple">simple</option>
+						<option value="doble">doble</opcion>
+					</select>
+					<input type="text" name="telefono" required placeholder="cuenta de twitter" class="input" />
+					<input type="text" name="twitter" placeholder="cuenta de twitter" class="input" />
+					<label>Comentario</label>
+					<textarea class="coment input" >
+					</textarea>
+					<input class="submit" type="submit" value="participa"  />
+				</form>
 			</div>
 		</section>
 		<section id="ponentes">
@@ -109,7 +141,7 @@
 				<h2>Los ponentes de <strong>#mejorandola</strong><span>Centroamérica</span></h2>
 				<article class="ponente">
 					<div class="imagen">
-	                	<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/luisvonahn.png" height="180" width="185" alt="Luis Von Ahn"/>
+	                	<img src="images/luisvonahn.png" height="180" width="185" alt="Luis Von Ahn"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Luis Von Ahn</h3><h4 class="grilla"><a href="http://twitter.com/luisvonahn">@luisvonahn</a></h4>
@@ -118,7 +150,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/Christian.png" height="180" width="185" alt="Christian"/>
+                		<img src="images/Christian.png" height="180" width="185" alt="Chritian"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Christian Van Der Henst</h3><h4 class="grilla"><a href="http://twitter.com/cvander">@cvander</a></h4>
@@ -127,7 +159,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/Stephanie.png" height="180" width="185" alt="Stephanie Falla"/>
+                		<img src="images/Stephanie.png" height="180" width="185" alt="Stephanie Falla"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Stephanie Falla Aroche</h3><h4 class="grilla"><a href="http://twitter.com/stephaniefalla">@stephaniefalla</a></h4>
@@ -136,7 +168,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-               	 		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/corp.png" height="180" width="185" alt="Alejandro Corpeño"/>	
+               	 		<img src="images/corp.png" height="180" width="185" alt="Alejandro Corpeño"/>	
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Alejandro Corpeño</h3><h4 class="grilla"><a href="http://twitter.com/corp">@corp</a></h4>
@@ -146,7 +178,7 @@
 				
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/gissejo.png" height="180" width="185" alt="Gissela Peralta"/>	
+                		<img src="images/gissejo.png" height="180" width="185" alt="Gissela Peralta"/>	
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Gissela Peralta</h3><h4 class="grilla"><a href="http://twitter.com/gissejo">@gissejo</a></h4>
@@ -155,7 +187,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cambronero.png" height="180" width="185" alt="Cristian Cambronero"/>	
+                		<img src="images/cambronero.png" height="180" width="185" alt="Cristian Cambronero"/>	
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Cristian Cambronero</h3><h4 class="grilla"><a href="http://twitter.com/cambronero">@cambronero</a></h4>
@@ -164,7 +196,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/freddy.png" height="180" width="185" alt="freddy"/>
+                		<img src="images/freddy.png" height="180" width="185" alt="freddy"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">John Freddy Vega</h3><h4 class="grilla"><a href="http://twitter.com/freddier">@freddier</a></h4>
@@ -173,7 +205,7 @@
 				</article>
 			</div>
 			<div id="sedes">
-				<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/participa.jpg" alt="participa"/>
+				<img src="images-guatemala/participa.jpg" alt="participa"/>
 				<h2 class="verde"><span>¿Quieres ver las conferencias en el auditorio de tu ciudad?</span></h2>
                 <p>
                     El evento se transmite online a cualquier dispositivo conectado a Internet.  Adicionalmente, con tus amigos pueden generar una reunión en algún centro educativo o café para disfrutar los dos días del evento. Si quieres organizar una SEDE no dudes en contactarnos vía un tweet.
@@ -184,8 +216,8 @@
 			<div class="content">
 				
 				<div class="comunidades">
-					<a href="http://maestrosdelweb.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/maestrosdelweb.png" alt="cristalab" /></a>
-					<a href="http://cristalab.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cristalab.png" alt="cristalab" /></a>
+					<a href="http://maestrosdelweb.com" target="blank"><img src="images-guatemala/maestrosdelweb.png" alt="cristalab" /></a>
+					<a href="http://cristalab.com" target="blank"><img src="images-guatemala/cristalab.png" alt="cristalab" /></a>
 				</div>
 				<div id="nosotros">
 					<div>
@@ -205,7 +237,7 @@
 		</footer>
 	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="{{ STATIC_PREFIX }}js/jquery.form.js"></script>
-<script src="{{ STATIC_PREFIX }}js/codiguito-conferencia.js"></script>
-
-{% endblock %}
+<script src="js/jquery.form.js"></script>
+<script src="js/codiguito.js"></script>
+</body>
+</html>

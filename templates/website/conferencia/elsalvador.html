@@ -1,38 +1,14 @@
-<!doctype html>
-<html lang="es">
-<head>
-	<title></title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="css/guatemala.css"/>
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<link rel="stylesheet" href="iexplorer.css"/>
-	<![endif]-->
-	<script type="text/javascript">
-	var analyticsFileTypes = [''];
-	var analyticsEventTracking = 'enabled';
-	</script>
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-76863-8']);
-		_gaq.push(['_trackPageview']);
-		_gaq.push(['_trackPageLoadTime']);
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-</head>
-<body>
+{% extends "website/conferencia/base.html" %}
+
+
+{% block body %}
 	<div id="wrapper">
 		<section id="portada">
 		<div class="content">
 			<div id="cinta">
 			</div>
 			<header>
-				<a id="logo" href="http://mejorando.la/conferencia" title="mejorando.la/conferencia"><img src="images-guatemala/mejorandola-conferencia-logo.png"/></a>
+				<a id="logo" href="http://mejorando.la/conferencia" title="mejorando.la/conferencia"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/mejorandola-conferencia-logo.png"/></a>
 				<h2 class="stream"><strong>25 de agosto</strong>streaming para el mundo</h2>
 				
 				
@@ -65,8 +41,8 @@
 			<article id="tema" style="height:auto">
 				<nav>
 					<ul>
-						<li><a href="http://maestrosdelweb.com" target="blank"><img src="images-guatemala/maestrosdelweb.png" alt="cristalab" width=""/></a>
-						<li><a href="http://cristalab.com" target="blank"><img src="images-guatemala/cristalab.png" alt="cristalab" width=""/></a>
+						<li><a href="http://maestrosdelweb.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/maestrosdelweb.png" alt="cristalab" width=""/></a>
+						<li><a href="http://cristalab.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cristalab.png" alt="cristalab" width=""/></a>
 					</ul>
 				</nav>
 				<div class="wrap">
@@ -86,8 +62,8 @@
 		<section id="sponsors">
 			<div class="content">
 				<div class="col oro">
-					 <a href="http://www.ufm.edu"><img src="images-guatemala/sponsors/ufm.png" height="56" width="113" alt="Universidad Francisco Marroquín"/></a>					
-					<a href="http://mediastream.cl"><img src="images-guatemala/sponsors/mediastream.png" height="56" width="231" alt="mediastream" id="Mediastream"/></a>			
+					 <a href="http://www.ufm.edu"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/ufm.png" height="56" width="113" alt="Universidad Francisco Marroquín"/></a>					
+					<a href="http://mediastream.cl"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/mediastream.png" height="56" width="231" alt="mediastream" id="Mediastream"/></a>			
 				</div>
 				
 			</div>
@@ -98,10 +74,10 @@
 					<h3>El Bus Alegre desde El Salvador</h3>
 					<p>Partiendo de San Salvador a las 6:00 am via Pullmantur. Y llegando a la Ciudad de Guatemala a las 13:00 pm </p>
 					<div class="fila">
-						<p>Hospedaje en el Hotel Lo Máximo de Guate.</p> <img id="hotel1" src="images-guatemala/hotel1.jpg" alt="hotel Maximo"/>
+						<p>Hospedaje en el Hotel Lo Máximo de Guate.</p> <img id="hotel1" src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/hotel1.jpg" alt="hotel Maximo"/>
 					</div>
 					<div class="fila">
-						<img id="hotel2" src="images-guatemala/hotel2.jpg" alt="hotel Maximo"/><p>Tips de viaje: llevar churritos para el camino, empacar una media docena de pupusas para compatir con los hermanos centroamericanos</p>
+						<img id="hotel2" src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/hotel2.jpg" alt="hotel Maximo"/><p>Tips de viaje: llevar churritos para el camino, empacar una media docena de pupusas para compatir con los hermanos centroamericanos</p>
 					</div>
 				</div>
 			</div>
@@ -141,7 +117,7 @@
 				<h2>Los ponentes de <strong>#mejorandola</strong><span>Centroamérica</span></h2>
 				<article class="ponente">
 					<div class="imagen">
-	                	<img src="images/luisvonahn.png" height="180" width="185" alt="Luis Von Ahn"/>
+	                	<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/luisvonahn.png" height="180" width="185" alt="Luis Von Ahn"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Luis Von Ahn</h3><h4 class="grilla"><a href="http://twitter.com/luisvonahn">@luisvonahn</a></h4>
@@ -150,7 +126,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="images/Christian.png" height="180" width="185" alt="Chritian"/>
+                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/Christian.png" height="180" width="185" alt="Chritian"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Christian Van Der Henst</h3><h4 class="grilla"><a href="http://twitter.com/cvander">@cvander</a></h4>
@@ -159,7 +135,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="images/Stephanie.png" height="180" width="185" alt="Stephanie Falla"/>
+                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/Stephanie.png" height="180" width="185" alt="Stephanie Falla"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Stephanie Falla Aroche</h3><h4 class="grilla"><a href="http://twitter.com/stephaniefalla">@stephaniefalla</a></h4>
@@ -168,7 +144,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-               	 		<img src="images/corp.png" height="180" width="185" alt="Alejandro Corpeño"/>	
+               	 		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/corp.png" height="180" width="185" alt="Alejandro Corpeño"/>	
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Alejandro Corpeño</h3><h4 class="grilla"><a href="http://twitter.com/corp">@corp</a></h4>
@@ -178,7 +154,7 @@
 				
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="images/gissejo.png" height="180" width="185" alt="Gissela Peralta"/>	
+                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/gissejo.png" height="180" width="185" alt="Gissela Peralta"/>	
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Gissela Peralta</h3><h4 class="grilla"><a href="http://twitter.com/gissejo">@gissejo</a></h4>
@@ -187,7 +163,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="images/cambronero.png" height="180" width="185" alt="Cristian Cambronero"/>	
+                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cambronero.png" height="180" width="185" alt="Cristian Cambronero"/>	
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Cristian Cambronero</h3><h4 class="grilla"><a href="http://twitter.com/cambronero">@cambronero</a></h4>
@@ -196,7 +172,7 @@
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="images/freddy.png" height="180" width="185" alt="freddy"/>
+                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/freddy.png" height="180" width="185" alt="freddy"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">John Freddy Vega</h3><h4 class="grilla"><a href="http://twitter.com/freddier">@freddier</a></h4>
@@ -205,7 +181,7 @@
 				</article>
 			</div>
 			<div id="sedes">
-				<img src="images-guatemala/participa.jpg" alt="participa"/>
+				<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/participa.jpg" alt="participa"/>
 				<h2 class="verde"><span>¿Quieres ver las conferencias en el auditorio de tu ciudad?</span></h2>
                 <p>
                     El evento se transmite online a cualquier dispositivo conectado a Internet.  Adicionalmente, con tus amigos pueden generar una reunión en algún centro educativo o café para disfrutar los dos días del evento. Si quieres organizar una SEDE no dudes en contactarnos vía un tweet.
@@ -216,8 +192,8 @@
 			<div class="content">
 				
 				<div class="comunidades">
-					<a href="http://maestrosdelweb.com" target="blank"><img src="images-guatemala/maestrosdelweb.png" alt="cristalab" /></a>
-					<a href="http://cristalab.com" target="blank"><img src="images-guatemala/cristalab.png" alt="cristalab" /></a>
+					<a href="http://maestrosdelweb.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/maestrosdelweb.png" alt="cristalab" /></a>
+					<a href="http://cristalab.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cristalab.png" alt="cristalab" /></a>
 				</div>
 				<div id="nosotros">
 					<div>
@@ -236,8 +212,4 @@
 			</div>
 		</footer>
 	</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="js/jquery.form.js"></script>
-<script src="js/codiguito.js"></script>
-</body>
-</html>
+{% endblock %}

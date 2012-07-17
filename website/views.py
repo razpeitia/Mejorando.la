@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.core import serializers
 from django.utils import simplejson
+from django.template import TemplateDoesNotExist
 from akismet import Akismet
 import GeoIP
 import image
@@ -282,3 +283,10 @@ def usuarios_chat(solicitud):
         })
 
     return render_to_response('website/usuarios_chat.html', { 'usuarios': simplejson.dumps(users) })
+
+
+def conferencia(solicitud):
+    try:
+        return render_to_response('website/conferencia/%s.html' % get_pais(solicitud.META))
+    except TemplateDoesNotExist:
+        return render_to_response('website/conferencia/default.html')

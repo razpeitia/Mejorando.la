@@ -140,9 +140,10 @@ header .stream strong{font-family:Arial;color:#fff;display:block;font-size:40px;
 #viaje .label{display:block;text-align:left}
 #viaje .input{width:91%;margin:5px 0}
 #viaje .mensaje{float:left;font-family:Arial;width:28%;}
-#viaje .mensaje h3{margin:30px 0 10px 0;font-size:45px;line-height:40px;text-transform:uppercase;color:#fbce17}
+#viaje .mensaje h3{margin:30px 0 10px 0;font-size:40px;line-height:40px;text-transform:uppercase;color:#fbce17}
 #viaje .mensaje h4{font-size:20px;margin-bottom:30px;line-height:20px}
-#viaje .mensaje p{font-size:20px;line-height:18px;font-weight:normal;font-family:'LatoRegular'}
+#viaje .mensaje p{font-size:16px;line-height:18px;font-weight:normal;font-family:'LatoRegular'}
+#viaje .mensaje .sub-tit{font-size:20px;margin:10px 0;color:#fbce17}
 #viaje .sexo{margin:5px 0;}
 #viaje .sexo > *{vertical-align:top}
 #viaje .sexo input{height:20px}

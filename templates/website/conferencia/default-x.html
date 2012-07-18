@@ -2,6 +2,8 @@
 
 
 {% block body %}
+
+
 	<div id="wrapper">
 		<section id="portada">
 		<div class="content">
@@ -10,6 +12,22 @@
 			<header>
 				<a id="logo" href="http://mejorando.la/conferencia" title="mejorando.la/conferencia"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/mejorandola-conferencia-logo.png"/></a>
 				<h2 class="stream"><strong>25 de agosto</strong>streaming para el mundo</h2>
+				
+				<article id="inscripcion">
+
+	                <h3>¡Aparta tu lugar YA!</h3>
+	                <form action="mailchimp.php" method="POST" id="formulario">
+
+	                    <input class="input" type="text" id="nombre" name="nombre" class="text-field"  placeholder="Nombre"required />
+
+	                    <input class="input" type="email" name="email" class="text-field" placeholder="Email" required />
+
+	                    <input class="submit" type="submit" value="inscribeme" id="inscribete-btn" />
+
+	                </form>
+
+	               <!--  <p id="confirmacion"><strong>¡Revisa tu mail!</strong> Twittea, Facebookea, Plusea e invita a tus amigos.</p> -->
+	            </article>
 	            <aside id="social">
 	                	<span>Comparte la experiencia</span>
 	                	<div class="cont twitter">
@@ -36,7 +54,7 @@
 	                    </div>
                 	</aside>
 			</header>
-			<article id="tema" style="height:auto">
+			<article id="tema">
 				<nav>
 					<ul>
 						<li><a href="http://maestrosdelweb.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/maestrosdelweb.png" alt="cristalab" width="140"/></a>
@@ -50,14 +68,21 @@
 	                <p>Participa del evento a través de nuestro Streaming en vivo. Se impartirán <strong>12 conferencias</strong> desde Centroamérica sobre el futuro del emprendimiento y liderazgo tecnológico. 
 
 	                <!--p>Quedas invitado a la Ciudad de Guatemala para compartir con los conferencistas del evento en el Auditorio Juan Bautista Gutiérrez en la Universidad Francisco Marroquín.</p-->
-	         
-	            </div>
-
+	                <div id="locacion">
+		            	<h2>Acompañanos</h2>
+		            	<p>Quedas invitado a la Ciudad de 
+						Guatemala para compartir con los 
+						conferencistas del evento en  el 
+						Auditorio Juan Bautista Gutiérrez 
+						en la Universidad Francisco 
+						Marroquín.</p>
+						<div class="loc"></div>
+		            </div>
 	            </div>        
 			</article>
 		</section>			
 		</div>
-		<section id="sponsors-ghost" style="background:none">
+		<section id="sponsors-ghost">
 		</section>
 		<section id="sponsors">
 			<div class="content">
@@ -65,69 +90,18 @@
 					 <a href="http://www.ufm.edu"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/ufm.png" height="56" width="113" alt="Universidad Francisco Marroquín"/></a>					
 					<a href="http://mediastream.cl"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/mediastream.png" height="56" width="231" alt="mediastream" id="Mediastream"/></a>			
 				</div>
-			
-			</div>
-		</section>
-		<section id="sede">
-			<div class="content avion">
-				<div class="bus">
-					<h3>El Avion Alegre desde Costa Rica</h3>
-					<p>Partiendo de Costa Rica a las 6:00 am via Pullmantur. Y llegando a la Ciudad de Guatemala a las 13:00 pm </p>
-					<div class="fila">
-						<p>Hospedaje en el Hotel Lo Máximo de Guate.</p> <img id="hotel1" src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/hotel1.jpg" alt="hotel Maximo"/>
-					</div>
-					<div class="fila">
-						<img id="hotel2" src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/hotel2.jpg" alt="hotel Maximo"/><p>Tips de viaje: llevar churritos para el camino, empacar una media docena de pupusas para compatir con los hermanos centroamericanos</p>
-					</div>
+				<div class="col plata">
+					<a href="http://www.infranetworking.com"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/infranetworking.png" height="56" width="217" alt="Infranetworking"/></a>
+
+					 <a href="http://www.ilifebelt.com"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/life-belt.png" height="56" width="118" alt="i Life Belt"/></a>
+
+					 <a href="http://www.gpovallas.com/paises/guatemala/"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/gpo.png" height="56" width="164" alt="gpovallas"/></a>
 				</div>
-			</div>
-		</section>
-		<section id="viaje">
-			<div class="content">
-				<div class="mensaje" style="width:50%">
-					<h3>Precios e Inscripcion</h3>
-					<h4>$600 USD por persona mediante transferencia bancaria o pago en efectivo. (En habitación doble)
-$710 USD por persona mediante transferencia bancaria o pago en efectivo. (En habitación sencilla)<h4>
-					<p>*A partir del 5 de Julio, TODOS los cursos, eventos y conferencias de mejorando.la serán gratuitos para mujeres. Dicho descuento debe ser aplicado a la tarifa anterior. <strong>El proceso de registro no estará completo sin el pago del costo total del paquete.</strong></p>
-					<h5 class="sub-tit">¿Qué incluye?</h5>
-					<p>Tiquete aéreo SJO-GUA-SJO<br />
-						Estadía 4 días, 3 noches en Ciudad de Guatemala<br />
-						Desayunos<br />
-						Impuestos<br />
-						Traslados Aeropuerto - Hotel - Aeropuerto<br />
-						Traslados Hotel - Conferencias - Hotel<br />
-						Entrada a las 12 conferencias
-					</p>
-					<h5 class="sub-tit">¿Qué incluye?</h5>
-					<p>$28 Impuestos de salida de Costa Rica<br />
-					Comidas no mencionadas<br />
-					Tours</p>
-					<h5 class="sub-tit">Consultas?</h5>
-					<p>nrbkstudio@gmail.com<br />
-					8854-7204 / 8322-4080<br />
-					@NRBKStudio</p>
+		
+				<div class="col cobre">
+					<a href="http://www.libertopolis.com/"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/libertopolis.png" height="56" width="134" alt="Libertopolis"/></a> 
+					<a href="http://www.prensalibre.com/"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/sponsors/prensa-libre.png"  height="56" width="134" alt="Prensa Libre"/></a>
 				</div>
-				<form action="" id="f-viaje" style="width:50%">
-					<input type="text" name="nombre" placeholder="Nombre" class="input" required/>
-					<input type="text" name="apellidos" placeholder="Apellidos" class="input" required/>
-					<input type="email" name="email" placeholder="Correo electrónico" class="input" required/>
-					<div class="sexo">
-						<label class="label">sexo</label>
-						<input type="radio" name="sexo" value="hombre" class="tipo" checked/><span>hombre</span>
-						<input type="radio" name="sexo" value="mujer" class="tipo"/><span>mujer</span>
-					</div>
-					<select name="tipo" class="input">
-						<option>Tipo de habitación</option>
-						<option value="simple">simple</option>
-						<option value="doble">doble</opcion>
-					</select>
-					<input type="text" name="telefono" required placeholder="cuenta de twitter" class="input" />
-					<input type="text" name="twitter" placeholder="cuenta de twitter" class="input" />
-					<label>Comentario</label>
-					<textarea class="coment input" >
-					</textarea>
-					<input class="submit" type="submit" value="participa"  />
-				</form>
 			</div>
 		</section>
 		<section id="ponentes">
@@ -144,7 +118,7 @@ $710 USD por persona mediante transferencia bancaria o pago en efectivo. (En hab
 				</article>
 				<article class="ponente">
 					<div class="imagen">
-                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/Christian.png" height="180" width="185" alt="Chritian"/>
+                		<img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/Christian.png" height="180" width="185" alt="Christian"/>
 	                </div>
 	                <div class="biografia">
 						<h3 class="grilla">Christian Van Der Henst</h3><h4 class="grilla"><a href="http://twitter.com/cvander">@cvander</a></h4>
@@ -208,19 +182,20 @@ $710 USD por persona mediante transferencia bancaria o pago en efectivo. (En hab
 		</section>
 		<footer>
 			<div class="content">
-				<div id="montanias">
-				</div>
+				
 				<div class="comunidades">
 					<a href="http://maestrosdelweb.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/maestrosdelweb.png" alt="cristalab" /></a>
 					<a href="http://cristalab.com" target="blank"><img src="{{ STATIC_PREFIX }}/images/conferencia/guatemala/cristalab.png" alt="cristalab" /></a>
 				</div>
 				<div id="nosotros">
 					<div>
+						
 						 <p>
 		                    Organizamos y participamos en eventos, cursos y talleres de muchas ramas del diseño y desarrollo online. En nuestros sitios se han gestado profesionales certificados de Adobe, líderes locales, empresarios, emprendedores, diseñadores premiados y grandes programadores.
 		                </p>
 					</div>
 					<div>
+						
 						<p>
 		                    Somos los fundadores de las comunidades más importantes sobre diseño y desarrollo web de habla hispana, nos juntamos para enseñar y compartir nuestro conocimiento. Sabemos de Internet y es nuestra misión enseñar y compartir el conocimiento de la comunidad.
 		                </p>
@@ -229,4 +204,6 @@ $710 USD por persona mediante transferencia bancaria o pago en efectivo. (En hab
 			</div>
 		</footer>
 	</div>
+
+
 {% endblock %}
